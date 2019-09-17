@@ -1,0 +1,24 @@
+col instance_name format a20 heading "Instance|name" 
+col elapsed_seconds format 999,999 Headintg "Elapsed|seconds"
+col cpu_ms_ps format 999,999.99 heading "CPU ms|p.s."
+col db_ms_ps format 999,999.99 heading "DB time|ms p.s."
+set pages 1000
+set lines 80
+set echo on 
+
+with cluster_delta as (
+    SELECT instance_name, start_timestamp,end_timestamp,
+     round((end_timestamp-start_Timestamp)*24*3600,2) elapsed_seconds, 
+           SUM(CASE WHEN stat_name = 'DB CPU' 
+                    THEN VALUE/1000 END) cpu_ms,
+            SUM(CASE WHEN stat_name = 'DB time' 
+                     THEN VALUE/1000 END) db_ms
+    FROM table(opsg_pkg.service_stat_report())
+    JOIN gv$instance using (inst_id) 
+   GROUP BY instance_name,start_timestamp,end_timestamp
+)
+SELECT instance_name, elapsed_seconds,
+       ROUND(cpu_ms / elapsed_seconds, 2) cpu_ms_ps,
+       ROUND(cpu_ms / elapsed_seconds, 2) db_ms_ps
+FROM cluster_delta 
+ORDER BY instance_name; 

@@ -1,0 +1,9 @@
+CREATE OR REPLACE PACKAGE OPSG_DATALOAD AUTHID CURRENT_USER
+  IS
+
+  PROCEDURE addemployees (employee_count NUMBER);
+  procedure addSales(source_year number, target_year number );
+
+
+  PROCEDURE extend_partitions (table_name varchar2 ,partition_year NUMBER);
+END; -- Package spec
