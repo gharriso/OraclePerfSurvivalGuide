@@ -1,0 +1,10 @@
+ 
+BEGIN
+   FOR r IN (SELECT index_name
+               FROM user_indexes)
+   LOOP
+      EXECUTE IMMEDIATE 'ALTER INDEX ' || r.index_name || 
+        ' MONITORING USAGE';
+   END LOOP;
+END;
+

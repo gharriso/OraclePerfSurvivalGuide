@@ -1,0 +1,13 @@
+CREATE OR REPLACE TRIGGER SYSTEM.trace_login_trigger
+AFTER LOGON
+ON DATABASE
+BEGIN
+IF SYS_CONTEXT ('USERENV', 'MODULE')  LIKE '%TOAD%'
+   THEN
+   
+      DBMS_SESSION.session_trace_enable (waits  => TRUE,
+                                             binds  => FALSE);
+      EXECUTE IMMEDIATE 'alter session set tracefile_identifier=TOAD';
+
+   END IF;
+END;
