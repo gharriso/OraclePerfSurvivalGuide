@@ -46,1301 +46,1263 @@ The script creates a user OPSG which has privileges to run all of the scripts an
 
 I found the data volumes in Oracle's SH schema too low to illustrate some of the SQL tuning principles.  The script extend_sh_schema.sql in the scripts directory will add about 2 million rows to the SALES and COSTS tables.   These updates are applied directly to the SH schema.    
 
-## <a name="Listing_of_individual_utility_scripts"></a>Listing of individual utility scripts
+##  Listing_of_individual_utility_scripts" 
 
-<table border="0">
 
-<tbody>
+Chapter 3: Tools of the Trade
 
-<tr>
 
-<td>Chapter 3: Tools of the Trade</td>
+p 41 [topsql1.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/topsql1.sql) Top 10 cached sql statements by elapsed time
 
-<td></td>
 
-<td></td>
+p 58 [loginTrigger.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/loginTrigger.sql ) Example of a login trigger that activates SQL trace
 
-</tr>
+ 
+p 70
 
-<tr>
+[topWaits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/topWaits.sql )
 
-<td>p 41</td>
+Non-idle wait times sorted by time waited
 
-<td>[topsql1.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/topsql1.sql )</td>
+ 
+p 73
 
-<td>Top 10 cached sql statements by elapsed time</td>
+[timeModelSimple.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/timeModelSimple.sql )
 
-</tr>
+Time model unioned with wait data to show waits combined with CPU timings
 
-<tr>
 
-<td>p 58</td>
+ 
 
-<td>[loginTrigger.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/loginTrigger.sql )</td>
+p 55
 
-<td>Example of a login trigger that activates SQL trace</td>
+[CurrentSessionTraceStatus.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/CurrentSessionTraceStatus.sql )
 
-</tr>
+Show the full name and path of the trace file for the current session
 
-<tr>
+ 
 
-<td>p 70</td>
+Chapter 5: Indexing and Clustering
 
-<td>[topWaits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/topWaits.sql )</td>
 
-<td>Non-idle wait times sorted by time waited</td>
+ 
 
-</tr>
 
-<tr>
+p 122
 
-<td>p 73</td>
+[monitoringOn.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch05/monitoringOn.sql )
 
-<td>[timeModelSimple.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/timeModelSimple.sql )</td>
+Turn on monitoring for all indexes
 
-<td>Time model unioned with wait data to show waits combined with CPU timings</td>
+ 
 
-</tr>
+p 122
 
-<tr>
+[vobject.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch05/vobject.sql )
 
-<td>p 55</td>
+Show usage statistics for indexes
 
-<td>[CurrentSessionTraceStatus.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/CurrentSessionTraceStatus.sql )</td>
 
-<td>Show the full name and path of the trace file for the current session</td>
 
-</tr>
 
-<tr>
 
-<td>Chapter 5: Indexing and Clustering</td>
+p 133
 
-<td></td>
+[checkPlanCache.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch05/checkPlanCache.sql )
 
-<td></td>
+Report on indexes that are not found in any cached execution plan
 
-</tr>
 
-<tr>
 
-<td>p 122</td>
 
-<td>[monitoringOn.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch05/monitoringOn.sql )</td>
 
-<td>Turn on monitoring for all indexes</td>
+Chapter 6: Application Design and Implementation
 
-</tr>
 
-<tr>
 
-<td>p 122</td>
 
-<td>[vobject.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch05/vobject.sql )</td>
 
-<td>Show usage statistics for indexes</td>
 
-</tr>
 
-<tr>
 
-<td>p 133</td>
 
-<td>[checkPlanCache.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch05/checkPlanCache.sql )</td>
+p 157
 
-<td>Report on indexes that are not found in any cached execution plan</td>
+[force_matching.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch06/force_matching.sql )
 
-</tr>
+Identify SQLs that are identical other than for literal values (Force matching candidates)
 
-<tr>
 
-<td>Chapter 6: Application Design and Implementation</td>
 
-<td></td>
 
-<td></td>
 
-</tr>
+Chapter 7: Optimizing the Optimizer
 
-<tr>
 
-<td>p 157</td>
 
-<td>[force_matching.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch06/force_matching.sql )</td>
 
-<td>Identify SQLs that are identical other than for literal values (Force matching candidates)</td>
 
-</tr>
 
-<tr>
 
-<td>Chapter 7: Optimizing the Optimizer</td>
 
-<td></td>
 
-<td></td>
+p 194
 
-</tr>
+[ses_optimizer.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch07/ses_optimizer.sql )
 
-<tr>
+Show optimizer parameters in effect for the curren session
 
-<td>p 194</td>
 
-<td>[ses_optimizer.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch07/ses_optimizer.sql )</td>
 
-<td>Show optimizer parameters in effect for the curren session</td>
 
-</tr>
 
-<tr>
+p 198
 
-<td>p 198</td>
+[disableStats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch07/disableStats.sql)
 
-<td>[disableStats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch07/disableStats.sql)</td>
+Disable automatic statistics collection
 
-<td>Disable automatic statistics collection</td>
 
-</tr>
 
-<tr>
 
-<td>Chapter 11: Sorting Grouping and Set Operations</td>
 
-<td></td>
+Chapter 11: Sorting Grouping and Set Operations
 
-<td></td>
 
-</tr>
 
-<tr>
 
-<td>p 332</td>
 
-<td>[sql_workarea.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch11/sql_workarea.sql )</td>
 
-<td>Show statistics onsort and hash workareas (from V$SQL_WORKAREA)</td>
 
-</tr>
 
-<tr>
 
-<td>Chapter 12: Using and Tuning PL/SQL</td>
+p 332
 
-<td></td>
+[sql_workarea.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch11/sql_workarea.sql )
 
-<td></td>
+Show statistics onsort and hash workareas (from V$SQL_WORKAREA)
 
-</tr>
 
-<tr>
 
-<td>p 355</td>
 
-<td>[plsqltime_sys.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/plsqltime_sys.sql )</td>
 
-<td>Query to reveal the overhead of PLSQL within the database</td>
+Chapter 12: Using and Tuning PL/SQL
 
-</tr>
 
-<tr>
 
-<td>p 356</td>
 
-<td>[cachedPlsql.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/cachedPlsql.sql )</td>
 
-<td>Show statements in the cache with PLSQL component and show pct of time spent in PLSQL</td>
 
-</tr>
 
-<tr>
 
-<td>p 357</td>
 
-<td>[queryProfiler.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/queryProfiler.sql )</td>
+p 355
 
-<td>Report on data held in the PLSQL_PROFILER tables</td>
+[plsqltime_sys.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/plsqltime_sys.sql )
 
-</tr>
+Query to reveal the overhead of PLSQL within the database
 
-<tr>
 
-<td>p 360</td>
 
-<td>[hrpof_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/hrpof_qry.sql )</td>
 
-<td>Query agains the DBMSHP (hierarchical profiler) tables</td>
 
-</tr>
+p 356
 
-<tr>
+[cachedPlsql.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/cachedPlsql.sql )
 
-<td>Chapter 13: Parallel SQL</td>
+Show statements in the cache with PLSQL component and show pct of time spent in PLSQL
 
-<td></td>
 
-<td></td>
 
-</tr>
 
-<tr>
 
-<td>p 414</td>
+p 357
 
-<td>[px_session.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch13/px_session.sql )</td>
+[queryProfiler.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/queryProfiler.sql )
 
-<td>Show real time view of current parallel executions</td>
+Report on data held in the PLSQL_PROFILER tables
 
-</tr>
 
-<tr>
 
-<td>p 413</td>
 
-<td>[tqstat2.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch13/tqstat2.sql )</td>
 
-<td>Example of using v$pq_tqstat to reveal PQO workload distribution</td>
+p 360
 
-</tr>
+[hrpof_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/hrpof_qry.sql )
 
-<tr>
+Query agains the DBMSHP (hierarchical profiler) tables
 
-<td>p 422</td>
 
-<td>[rac_pqo2.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch13/rac_pqo2.sql )</td>
 
-<td>Example of using v$pq_tqstat to show inster-instance parallel in RAC</td>
 
-</tr>
 
-<tr>
+Chapter 13: Parallel SQL
 
-<td>Chapter 15: Lock Contention</td>
 
-<td></td>
 
-<td></td>
 
-</tr>
 
-<tr>
 
-<td>p 460</td>
 
-<td>[lock_type.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_type.sql )</td>
 
-<td>Show definition of all lock codes</td>
 
-</tr>
+p 414
 
-<tr>
+[px_session.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch13/px_session.sql )
 
-<td>p 461</td>
+Show real time view of current parallel executions
 
-<td>[v_my_locks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/v_my_locks.sql)</td>
 
-<td>View definition that will show all locks held by the current user</td>
 
-</tr>
 
-<tr>
 
-<td>p 467</td>
+p 413
 
-<td>[lock_delta_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_delta_qry.sql )</td>
+[tqstat2.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch13/tqstat2.sql )
 
-<td>Show lock waits compared to other waits and CPU over a short time period</td>
+Example of using v$pq_tqstat to reveal PQO workload distribution
 
-</tr>
 
-<tr>
 
-<td>p 466</td>
 
-<td>[lock_wait_events.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_wait_events.sql )</td>
 
-<td>Show lock waits compared to other waits and CPU</td>
+p 422
 
-</tr>
+[rac_pqo2.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch13/rac_pqo2.sql )
 
-<tr>
+Example of using v$pq_tqstat to show inster-instance parallel in RAC
 
-<td>p 468</td>
 
-<td>[ash_locks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/ash_locks.sql )</td>
 
-<td>Show lock wait information from Active Session History (ASH)</td>
 
-</tr>
 
-<tr>
+Chapter 15: Lock Contention
 
-<td>p 468</td>
 
-<td>[awr_locks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/awr_locks.sql )</td>
 
-<td>Show lock wait information from Active Workload Repository (AWR)</td>
 
-</tr>
 
-<tr>
 
-<td>p 470</td>
 
-<td>[locking_sql.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/locking_sql.sql )</td>
 
-<td>Show SQLs with the highest lock waits</td>
 
-</tr>
+p 460
 
-<tr>
+[lock_type.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_type.sql )
 
-<td>p 471</td>
+Show definition of all lock codes
 
-<td>[segment_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/segment_stats.sql )</td>
 
-<td>Show segments with the highest lock waits</td>
 
-</tr>
 
-<tr>
 
-<td>p 472</td>
+p 461
 
-<td>[application_module_wait.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/application_module_wait.sql )</td>
+[v_my_locks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/v_my_locks.sql)
 
-<td>Show SQLs for a particular module with lock waits</td>
+View definition that will show all locks held by the current user
 
-</tr>
 
-<tr>
 
-<td>p 472</td>
 
-<td>[session_lock_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/session_lock_waits.sql )</td>
 
-<td>Show sessions with a specific USERNAME and their lock waits</td>
+p 467
 
-</tr>
+[lock_delta_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_delta_qry.sql )
 
-<tr>
+Show lock waits compared to other waits and CPU over a short time period
 
-<td>p 476</td>
 
-<td>[blockers.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/blockers.sql )</td>
 
-<td>Simple blocking locks script</td>
 
-</tr>
 
-<tr>
+p 466
 
-<td>p 477</td>
+[lock_wait_events.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_wait_events.sql )
 
-<td>[lock_tree.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_tree.sql )</td>
+Show lock waits compared to other waits and CPU
 
-<td>Lock tree built up from V$SESSION</td>
 
-</tr>
 
-<tr>
 
-<td>p 477</td>
 
-<td>[show_session_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/show_session_waits.sql )</td>
+p 468
 
-<td>Blocking row level locks at the session level</td>
+[ash_locks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/ash_locks.sql )
 
-</tr>
+Show lock wait information from Active Session History (ASH)
 
-<tr>
 
-<td>p 478</td>
 
-<td>[wait_chains.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/wait_chains.sql )</td>
 
-<td>Lock tree built up from V$wait_chains</td>
 
-</tr>
+p 468
 
-<tr>
+[awr_locks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/awr_locks.sql )
 
-<td>Chapter 16: Latch and Mutex contention</td>
+Show lock wait information from Active Workload Repository (AWR)
 
-<td></td>
 
-<td></td>
 
-</tr>
 
-<tr>
 
-<td>p 494</td>
+p 470
 
-<td>[latch_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_waits.sql )</td>
+[locking_sql.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/locking_sql.sql )
 
-<td>Latch/mutex waits compared to other non-idle waits and to CPU</td>
+Show SQLs with the highest lock waits
 
-</tr>
 
-<tr>
 
-<td>p 496</td>
 
-<td>[latch_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_qry.sql )</td>
 
-<td>"Latch statistics - gets</td>
+p 471
 
-</tr>
+[segment_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/segment_stats.sql )
 
-<tr>
+Show segments with the highest lock waits
 
-<td>p 497</td>
 
-<td>[ash_latch.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/ash_latch.sql )</td>
 
-<td>Latch statistics from Active Session History (ASH)</td>
 
-</tr>
 
-<tr>
+p 472
 
-<td>p 495</td>
+[application_module_wait.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/application_module_wait.sql )
 
-<td>[latch_delta_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_delta_qry.sql )</td>
+Show SQLs for a particular module with lock waits
 
-<td>Latch/mutex waits over a short duration compared to other waits</td>
 
-</tr>
 
-<tr>
 
-<td>p 497</td>
 
-<td>[latching_sql.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latching_sql.sql )</td>
+p 472
 
-<td>SQLs with the highest concurrency waits (possible latch/mutex-related)</td>
+[session_lock_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/session_lock_waits.sql )
 
-</tr>
+Show sessions with a specific USERNAME and their lock waits
 
-<tr>
 
-<td>p 500</td>
 
-<td>[force_matching.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/force_matching.sql )</td>
 
-<td>SQLs not using bind variables - possibly causing library cache mutex contention</td>
 
-</tr>
+p 476
 
-<tr>
+[blockers.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/blockers.sql )
 
-<td>p 499</td>
+Simple blocking locks script
 
-<td>[libcache.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/libcache.sql )</td>
 
-<td>Library cache statistics</td>
 
-</tr>
 
-<tr>
 
-<td>p 503</td>
+p 477
 
-<td>[cbc_config.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/cbc_config.sql )</td>
+[lock_tree.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_tree.sql )
 
-<td>"Number of Cache Buffers Chains latches & number of buffers covered</td>
+Lock tree built up from V$SESSION
 
-</tr>
 
-<tr>
 
-<td>p 504</td>
 
-<td>[cbc_blocks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/cbc_blocks.sql )</td>
 
-<td>Blocks with the highest touch counts and latches involved</td>
+p 477
 
-</tr>
+[show_session_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/show_session_waits.sql )
 
-<tr>
+Blocking row level locks at the session level
 
-<td>p 505</td>
 
-<td>[rowcache_latches.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/rowcache_latches.sql )</td>
 
-<td>Rowcache latch statistics</td>
 
-</tr>
 
-<tr>
+p 478
 
-<td>p 510</td>
+[wait_chains.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/wait_chains.sql )
 
-<td>[latch_class.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_class.sql )</td>
+Lock tree built up from V$wait_chains
 
-<td>Adjusting spin count for an individual latch class</td>
 
-</tr>
 
-<tr>
 
-<td>p 511</td>
 
-<td>[latch_class_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_class_qry.sql )</td>
+Chapter 16: Latch and Mutex contention
 
-<td>Query to show latch class configuration</td>
 
-</tr>
 
-<tr>
 
-<td>Chapter 17: Shared Memory Contention</td>
 
-<td></td>
 
-<td></td>
 
-</tr>
 
-<tr>
 
-<td>p 519</td>
+p 494
 
-<td>[iostat_file.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/iostat_file.sql )</td>
+[latch_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_waits.sql )
 
-<td>Status of ansynchronous IO</td>
+Latch/mutex waits compared to other non-idle waits and to CPU
 
-</tr>
 
-<tr>
 
-<td>p 521</td>
 
-<td>[flash_size.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/flash_size.sql )</td>
 
-<td>Size of the flashback log buffer</td>
+p 496
 
-</tr>
+[latch_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_qry.sql )
 
-<tr>
+"Latch statistics - gets
 
-<td>p 526</td>
 
-<td>[waitstat.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/waitstat.sql )</td>
 
-<td>Buffer busy waits by buffer type</td>
 
-</tr>
 
-<tr>
+p 497
 
-<td>p 526</td>
+[ash_latch.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/ash_latch.sql )
 
-<td>[busy_segments.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/busy_segments.sql )</td>
+Latch statistics from Active Session History (ASH)
 
-<td>Buffer busy waits by segment</td>
 
-</tr>
 
-<tr>
 
-<td>Chapter 18: Buffer Cache Tuning</td>
 
-<td></td>
+p 495
 
-<td></td>
+[latch_delta_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_delta_qry.sql )
 
-</tr>
+Latch/mutex waits over a short duration compared to other waits
 
-<tr>
 
-<td>p 538</td>
 
-<td>[temporary_direct.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/temporary_direct.sql )</td>
 
-<td>Direct path IO and buffered IO</td>
 
-</tr>
+p 497
 
-<tr>
+[latching_sql.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latching_sql.sql )
 
-<td>p 540</td>
+SQLs with the highest concurrency waits (possible latch/mutex-related)
 
-<td>[buffer_pool_objects.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/buffer_pool_objects.sql )</td>
 
-<td>Segments cached in the buffer pools</td>
 
-</tr>
 
-<tr>
 
-<td>p 541</td>
+p 500
 
-<td>[hit_rate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/hit_rate.sql )</td>
+[force_matching.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/force_matching.sql )
 
-<td>"""hit rates"" for direct and cached IOs "</td>
+SQLs not using bind variables - possibly causing library cache mutex contention
 
-</tr>
 
-<tr>
 
-<td>p 542</td>
 
-<td>[hit_rate_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/hit_rate_delta.sql )</td>
 
-<td>"""hit rates"" calculated over a time interval "</td>
+p 499
 
-</tr>
+[libcache.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/libcache.sql )
 
-<tr>
+Library cache statistics
 
-<td>p 544</td>
 
-<td>[sql_miss_rates.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/sql_miss_rates.sql )</td>
 
-<td>logical and physical IO for specific SQLs</td>
 
-</tr>
 
-<tr>
+p 503
 
-<td>p 546</td>
+[cbc_config.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/cbc_config.sql )
 
-<td>[buffer_pool_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/buffer_pool_stats.sql )</td>
+"Number of Cache Buffers Chains latches & number of buffers covered
 
-<td>Buffer pool IO statistics</td>
 
-</tr>
 
-<tr>
 
-<td>p 547</td>
 
-<td>[db_cache_advice1.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/db_cache_advice1.sql )</td>
+p 504
 
-<td>Query on V$DB_CACHE_ADVICE</td>
+[cbc_blocks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/cbc_blocks.sql )
 
-</tr>
+Blocks with the highest touch counts and latches involved
 
-<tr>
 
-<td>p 548</td>
 
-<td>[db_cache_hist.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/db_cache_hist.sql )</td>
 
-<td>DB cache advise shown as a histogram</td>
 
-</tr>
+p 505
 
-<tr>
+[rowcache_latches.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/rowcache_latches.sql )
 
-<td>p 552</td>
+Rowcache latch statistics
 
-<td>[sga_dynamic_components.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/sga_dynamic_components.sql )</td>
 
-<td>Query on V$SGA_DYNAMIC_COMPONENTS</td>
 
-</tr>
 
-<tr>
 
-<td>p 551</td>
+p 510
 
-<td>[sga_resize_ops.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/sga_resize_ops.sql )</td>
+[latch_class.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_class.sql )
 
-<td>Query on V$SGA_RESIZE_OPS</td>
+Adjusting spin count for an individual latch class
 
-</tr>
 
-<tr>
 
-<td>Chapter 19: Optimizing PGA Memory</td>
 
-<td></td>
 
-<td></td>
+p 511
 
-</tr>
+[latch_class_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_class_qry.sql )
 
-<tr>
+Query to show latch class configuration
 
-<td>p 562</td>
 
-<td>[pga_parameters.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/pga_parameters.sql )</td>
 
-<td>PGA parameters and configuration from v$pgastat</td>
 
-</tr>
 
-<tr>
+Chapter 17: Shared Memory Contention
 
-<td>p 566</td>
 
-<td>[direct_temp_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/direct_temp_waits.sql )</td>
 
-<td>temporary direct path IO compared to CPU and other non-idle waits</td>
 
-</tr>
 
-<tr>
 
-<td>p 565</td>
 
-<td>[top_pga.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/top_pga.sql )</td>
 
-<td>Top consumers of PGA memory</td>
 
-</tr>
+p 519
 
-<tr>
+[iostat_file.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/iostat_file.sql )
 
-<td>p 567</td>
+Status of ansynchronous IO
 
-<td>[direct_io_delta_view_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/direct_io_delta_view_qry.sql )</td>
 
-<td>Direct path temp IO over a time interval</td>
 
-</tr>
 
-<tr>
 
-<td>p 570</td>
+p 521
 
-<td>[sql_workarea.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/sql_workarea.sql )</td>
+[flash_size.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/flash_size.sql )
 
-<td>SQL workarea statistics</td>
+Size of the flashback log buffer
 
-</tr>
 
-<tr>
 
-<td>p 571</td>
 
-<td>[pga_target_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/pga_target_advice.sql )</td>
 
-<td>PGA target advice report</td>
+p 526
 
-</tr>
+[waitstat.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/waitstat.sql )
 
-<tr>
+Buffer busy waits by buffer type
 
-<td>p 572</td>
 
-<td>[pga_advice_hist.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/pga_advice_hist.sql )</td>
 
-<td>PGA target advice histogram</td>
 
-</tr>
 
-<tr>
+p 526
 
-<td>Chapter 20: Other Memory Management Topics</td>
+[busy_segments.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/busy_segments.sql )
 
-<td></td>
+Buffer busy waits by segment
 
-<td></td>
 
-</tr>
 
-<tr>
 
-<td>p 578</td>
 
-<td>[io_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/io_waits.sql )</td>
+Chapter 18: Buffer Cache Tuning
 
-<td>IO wait breakdown</td>
 
-</tr>
 
-<tr>
 
-<td>p 581</td>
 
-<td>[io_time_delta_view_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/io_time_delta_view_qry.sql )</td>
 
-<td>IO wait breakdown over a time period</td>
 
-</tr>
 
-<tr>
 
-<td>p 582</td>
+p 538
 
-<td>[direct_path_trace_stats.pl](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/direct_path_trace_stats.pl)</td>
+[temporary_direct.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/temporary_direct.sql )
 
-<td>Perl script to calculate average direct path IO time from a trace file</td>
+Direct path IO and buffered IO
 
-</tr>
 
-<tr>
 
-<td>p 583</td>
 
-<td>[pga_target_time.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/pga_target_time.sql )</td>
 
-<td>PGA target converted to elapsed times</td>
+p 540
 
-</tr>
+[buffer_pool_objects.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/buffer_pool_objects.sql )
 
-<tr>
+Segments cached in the buffer pools
 
-<td>p 584</td>
 
-<td>[overall_memory_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/overall_memory_advice.sql )</td>
 
-<td>Combined (PGA+SGA) memory advice report for 10g</td>
 
-</tr>
 
-<tr>
+p 541
 
-<td>p 586</td>
+[hit_rate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/hit_rate.sql )
 
-<td>[overall_memory11g.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/overall_memory11g.sql )</td>
+"""hit rates"" for direct and cached IOs "
 
-<td>Combined (PGA+SGA) memory advice report for 11g</td>
 
-</tr>
 
-<tr>
 
-<td>p 590</td>
 
-<td>[memory_dynamic_components.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_dynamic_components.sql )</td>
+p 542
 
-<td>V$MEMORY_DYNAMIC_COMPONENTS report</td>
+[hit_rate_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/hit_rate_delta.sql )
 
-</tr>
+"""hit rates"" calculated over a time interval "
 
-<tr>
 
-<td>p 590</td>
 
-<td>[memory_resize_ops.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_resize_ops.sql )</td>
 
-<td>V$MEMORY_RESIZE_OPS report</td>
 
-</tr>
+p 544
 
-<tr>
+[sql_miss_rates.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/sql_miss_rates.sql )
 
-<td>p 591</td>
+logical and physical IO for specific SQLs
 
-<td>[memory_target_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_target_advice.sql )</td>
 
-<td>Memory target advice report</td>
 
-</tr>
 
-<tr>
 
-<td>p 593</td>
+p 546
 
-<td>[kmgsbsmemadv.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/kmgsbsmemadv.sql )</td>
+[buffer_pool_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/buffer_pool_stats.sql )
 
-<td>Query against X$KMSGSBSMEMADV (basis of V$MEMORY_TARGET_ADVICE)</td>
+Buffer pool IO statistics
 
-</tr>
 
-<tr>
 
-<td>p 594</td>
 
-<td>[memory_parms.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_parms.sql )</td>
 
-<td>Report on memory related parameters</td>
+p 547
 
-</tr>
+[db_cache_advice1.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/db_cache_advice1.sql )
 
-<tr>
+Query on V$DB_CACHE_ADVICE
 
-<td>p 599</td>
 
-<td>[result_cache_statistics.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/result_cache_statistics.sql )</td>
 
-<td>Result set cache statistics</td>
 
-</tr>
 
-<tr>
+p 548
 
-<td>p 600</td>
+[db_cache_hist.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/db_cache_hist.sql )
 
-<td>[rscache_hit_rate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/rscache_hit_rate.sql )</td>
+DB cache advise shown as a histogram
 
-<td>Result set cache efficiency</td>
 
-</tr>
 
-<tr>
 
-<td>p 600</td>
 
-<td>[sql_cache_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/sql_cache_stats.sql )</td>
+p 552
 
-<td>Result set cache statistics for SQL statements</td>
+[sga_dynamic_components.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/sga_dynamic_components.sql )
 
-</tr>
+Query on V$SGA_DYNAMIC_COMPONENTS
 
-<tr>
 
-<td>p 601</td>
 
-<td>[rc_dependencies.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/rc_dependencies.sql )</td>
 
-<td>Result set cache dependencies</td>
 
-</tr>
+p 551
 
-<tr>
+[sga_resize_ops.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/sga_resize_ops.sql )
 
-<td>p 605</td>
+Query on V$SGA_RESIZE_OPS
 
-<td>[shared_pool_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/shared_pool_advice.sql )</td>
 
-<td>Shared pool advisory</td>
 
-</tr>
 
-<tr>
 
-<td>Chapter 21: Disk IO Tuning fundamentals</td>
+Chapter 19: Optimizing PGA Memory
 
-<td></td>
 
-<td></td>
 
-</tr>
 
-<tr>
 
-<td>p 617</td>
 
-<td>[io_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/io_waits.sql )</td>
 
-<td>IO waits compared to other waits and CPU</td>
 
-</tr>
 
-<tr>
+p 562
 
-<td>p 618</td>
+[pga_parameters.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/pga_parameters.sql )
 
-<td>[io_waits_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/io_waits_delta.sql )</td>
+PGA parameters and configuration from v$pgastat
 
-<td>IO waits reported for an interval</td>
 
-</tr>
 
-<tr>
 
-<td>p 619</td>
 
-<td>[iostat_file.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/iostat_file.sql )</td>
+p 566
 
-<td>Summary report from v$iostat_file</td>
+[direct_temp_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/direct_temp_waits.sql )
 
-</tr>
+temporary direct path IO compared to CPU and other non-idle waits
 
-<tr>
 
-<td>p 620</td>
 
-<td>[iostat_function.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/iostat_function.sql )</td>
 
-<td>Summary report of v$iostat_function</td>
 
-</tr>
+p 565
 
-<tr>
+[top_pga.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/top_pga.sql )
 
-<td>p 622</td>
+Top consumers of PGA memory
 
-<td>[filestat.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/filestat.sql )</td>
 
-<td>Summary report from v$filestat</td>
 
-</tr>
 
-<tr>
 
-<td>p 622</td>
+p 567
 
-<td>[filemetric.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/filemetric.sql )</td>
+[direct_io_delta_view_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/direct_io_delta_view_qry.sql )
 
-<td>Short term IO statistics from v$filemetric</td>
+Direct path temp IO over a time interval
 
-</tr>
 
-<tr>
 
-<td>p 624</td>
 
-<td>[calibrate_io.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/calibrate_io.sql )</td>
 
-<td>PL/SQL reoutine to calibrate IO</td>
+p 570
 
-</tr>
+[sql_workarea.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/sql_workarea.sql )
 
-<tr>
+SQL workarea statistics
 
-<td>p 623</td>
 
-<td>[file_histogram.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/file_histogram.sql )</td>
 
-<td>IO service time histogram</td>
 
-</tr>
 
-<tr>
+p 571
 
-<td>p 625</td>
+[pga_target_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/pga_target_advice.sql )
 
-<td>[dba_rsrc_io_calibrate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/dba_rsrc_io_calibrate.sql )</td>
+PGA target advice report
 
-<td>Query IO calibration data</td>
 
-</tr>
 
-<tr>
 
-<td>p 634</td>
 
-<td>[lgwr_size.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/lgwr_size.sql )</td>
+p 572
 
-<td>Size of an average redo log IO</td>
+[pga_advice_hist.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/pga_advice_hist.sql )
 
-</tr>
+PGA target advice histogram
 
-<tr>
 
-<td>p 636</td>
 
-<td>[log_file_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/log_file_waits.sql )</td>
 
-<td>Report of redo log related waits</td>
 
-</tr>
+Chapter 20: Other Memory Management Topics
 
-<tr>
 
-<td>p 637</td>
 
-<td>[log_history.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/log_history.sql )</td>
 
-<td>Log switch rates from v$log_history</td>
 
-</tr>
 
-<tr>
 
-<td>Chapter 22: Advanced IO techniques</td>
 
-<td></td>
 
-<td></td>
+p 578
 
-</tr>
+[io_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/io_waits.sql )
 
-<tr>
+IO wait breakdown
 
-<td>p 645</td>
 
-<td>[diskgroup_performance.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/diskgroup_performance.sql )</td>
 
-<td>ASM diskgroup IO throughput and service time</td>
 
-</tr>
 
-<tr>
+p 581
 
-<td>p 646</td>
+[io_time_delta_view_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/io_time_delta_view_qry.sql )
 
-<td>[asm_disk_performance.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_disk_performance.sql )</td>
+IO wait breakdown over a time period
 
-<td>ASM disk-level throughput and service time</td>
 
-</tr>
 
-<tr>
 
-<td>p 647</td>
 
-<td>[asm_operations.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_operations.sql )</td>
+p 582
 
-<td>ASM rebalance operations in progress</td>
+[direct_path_trace_stats.pl](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/direct_path_trace_stats.pl)
 
-</tr>
+Perl script to calculate average direct path IO time from a trace file
 
-<tr>
 
-<td>p 647</td>
 
-<td>[asm_files.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_files.sql )</td>
 
-<td>ASM file level IO statistics</td>
 
-</tr>
+p 583
 
-<tr>
+[pga_target_time.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/pga_target_time.sql )
 
-<td>p 654</td>
+PGA target converted to elapsed times
 
-<td>[asm_templates.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_templates.sql )</td>
 
-<td>List all ASM templates</td>
 
-</tr>
 
-<tr>
 
-<td>Chapter 23: Optimizing RAC</td>
+p 584
 
-<td></td>
+[overall_memory_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/overall_memory_advice.sql )
 
-<td></td>
+Combined (PGA+SGA) memory advice report for 10g
 
-</tr>
 
-<tr>
 
-<td>p 669</td>
 
-<td>[top_level_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/top_level_waits.sql )</td>
 
-<td>Break down of top level WAITCLASS waits</td>
+p 586
 
-</tr>
+[overall_memory11g.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/overall_memory11g.sql )
 
-<tr>
+Combined (PGA+SGA) memory advice report for 11g
 
-<td>p 670</td>
 
-<td>[cluster_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/cluster_waits.sql )</td>
 
-<td>Break out of cluster waits compared to other categories</td>
 
-</tr>
 
-<tr>
+p 590
 
-<td>p 671</td>
+[memory_dynamic_components.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_dynamic_components.sql )
 
-<td>[rac_waits_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/rac_waits_delta.sql )</td>
+V$MEMORY_DYNAMIC_COMPONENTS report
 
-<td>RAC waits over an interval of time</td>
 
-</tr>
 
-<tr>
 
-<td>p 673</td>
 
-<td>[avg_latency.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/avg_latency.sql )</td>
+p 590
 
-<td>Global cache latency report</td>
+[memory_resize_ops.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_resize_ops.sql )
 
-</tr>
+V$MEMORY_RESIZE_OPS report
 
-<tr>
 
-<td>p 674</td>
 
-<td>[latency_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/latency_delta.sql )</td>
 
-<td>Global cache latency over a time period</td>
 
-</tr>
+p 591
 
-<tr>
+[memory_target_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_target_advice.sql )
 
-<td>p 675</td>
+Memory target advice report
 
-<td>[ksxpia.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/ksxpia.sql )</td>
 
-<td>Private interconnect IP address</td>
 
-</tr>
 
-<tr>
 
-<td>p 677</td>
+p 593
 
-<td>[gc_blocks_lost.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/gc_blocks_lost.sql )</td>
+[kmgsbsmemadv.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/kmgsbsmemadv.sql )
 
-<td>Lost blocks report</td>
+Query against X$KMSGSBSMEMADV (basis of V$MEMORY_TARGET_ADVICE)
 
-</tr>
 
-<tr>
 
-<td>p 681</td>
 
-<td>[lms_latency.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/lms_latency.sql )</td>
 
-<td>LMS latency breakdown</td>
+p 594
 
-</tr>
+[memory_parms.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_parms.sql )
 
-<tr>
+Report on memory related parameters
 
-<td>p 682</td>
 
-<td>[flush_time.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/flush_time.sql )</td>
 
-<td>redo log flush frequency and wait times</td>
 
-</tr>
 
-<tr>
+p 599
 
-<td>p 684</td>
+[result_cache_statistics.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/result_cache_statistics.sql )
 
-<td>[balance.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/balance.sql )</td>
+Result set cache statistics
 
-<td>Cluster balance report</td>
 
-</tr>
 
-<tr>
 
-<td>p 685</td>
 
-<td>[rac_balance_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/rac_balance_delta.sql )</td>
+p 600
 
-<td>Cluster balance over a time period</td>
+[rscache_hit_rate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/rscache_hit_rate.sql )
 
-</tr>
+Result set cache efficiency
 
-<tr>
 
-<td>p 689</td>
 
-<td>[service_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/service_stats.sql )</td>
 
-<td>Report on service workload by instance</td>
 
-</tr>
+p 600
 
-<tr>
+[sql_cache_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/sql_cache_stats.sql )
 
-<td>p 693</td>
+Result set cache statistics for SQL statements
 
-<td>[gc_miss_rate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/gc_miss_rate.sql )</td>
 
-<td>"Global cache ""miss rate"" by instance "</td>
 
-</tr>
 
-<tr>
 
-<td>p 694</td>
+p 601
 
-<td>[top_gc_segments.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/top_gc_segments.sql )</td>
+[rc_dependencies.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/rc_dependencies.sql )
 
-<td>Segments with the highest Global Cache activity</td>
+Result set cache dependencies
 
-</tr>
+
+
+
+
+p 605
+
+[shared_pool_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/shared_pool_advice.sql )
+
+Shared pool advisory
+
+
+
+
+
+Chapter 21: Disk IO Tuning fundamentals
+
+
+
+
+
+
+
+
+
+p 617
+
+[io_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/io_waits.sql )
+
+IO waits compared to other waits and CPU
+
+
+
+
+
+p 618
+
+[io_waits_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/io_waits_delta.sql )
+
+IO waits reported for an interval
+
+
+
+
+
+p 619
+
+[iostat_file.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/iostat_file.sql )
+
+Summary report from v$iostat_file
+
+
+
+
+
+p 620
+
+[iostat_function.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/iostat_function.sql )
+
+Summary report of v$iostat_function
+
+
+
+
+
+p 622
+
+[filestat.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/filestat.sql )
+
+Summary report from v$filestat
+
+
+
+
+
+p 622
+
+[filemetric.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/filemetric.sql )
+
+Short term IO statistics from v$filemetric
+
+
+
+
+
+p 624
+
+[calibrate_io.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/calibrate_io.sql )
+
+PL/SQL reoutine to calibrate IO
+
+
+
+
+
+p 623
+
+[file_histogram.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/file_histogram.sql )
+
+IO service time histogram
+
+
+
+
+
+p 625
+
+[dba_rsrc_io_calibrate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/dba_rsrc_io_calibrate.sql )
+
+Query IO calibration data
+
+
+
+
+
+p 634
+
+[lgwr_size.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/lgwr_size.sql )
+
+Size of an average redo log IO
+
+
+
+
+
+p 636
+
+[log_file_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/log_file_waits.sql )
+
+Report of redo log related waits
+
+
+
+
+
+p 637
+
+[log_history.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/log_history.sql )
+
+Log switch rates from v$log_history
+
+
+
+
+
+Chapter 22: Advanced IO techniques
+
+
+
+
+
+
+
+
+
+p 645
+
+[diskgroup_performance.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/diskgroup_performance.sql )
+
+ASM diskgroup IO throughput and service time
+
+
+
+
+
+p 646
+
+[asm_disk_performance.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_disk_performance.sql )
+
+ASM disk-level throughput and service time
+
+
+
+
+
+p 647
+
+[asm_operations.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_operations.sql )
+
+ASM rebalance operations in progress
+
+
+
+
+
+p 647
+
+[asm_files.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_files.sql )
+
+ASM file level IO statistics
+
+
+
+
+
+p 654
+
+[asm_templates.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_templates.sql )
+
+List all ASM templates
+
+
+
+
+
+Chapter 23: Optimizing RAC
+
+
+
+
+
+
+
+
+
+p 669
+
+[top_level_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/top_level_waits.sql )
+
+Break down of top level WAITCLASS waits
+
+
+
+
+
+p 670
+
+[cluster_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/cluster_waits.sql )
+
+Break out of cluster waits compared to other categories
+
+
+
+
+
+p 671
+
+[rac_waits_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/rac_waits_delta.sql )
+
+RAC waits over an interval of time
+
+
+
+
+
+p 673
+
+[avg_latency.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/avg_latency.sql )
+
+Global cache latency report
+
+
+
+
+
+p 674
+
+[latency_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/latency_delta.sql )
+
+Global cache latency over a time period
+
+
+
+
+
+p 675
+
+[ksxpia.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/ksxpia.sql )
+
+Private interconnect IP address
+
+
+
+
+
+p 677
+
+[gc_blocks_lost.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/gc_blocks_lost.sql )
+
+Lost blocks report
+
+
+
+
+
+p 681
+
+[lms_latency.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/lms_latency.sql )
+
+LMS latency breakdown
+
+
+
+
+
+p 682
+
+[flush_time.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/flush_time.sql )
+
+redo log flush frequency and wait times
+
+
+
+
+
+p 684
+
+[balance.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/balance.sql )
+
+Cluster balance report
+
+
+
+
+
+p 685
+
+[rac_balance_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/rac_balance_delta.sql )
+
+Cluster balance over a time period
+
+
+
+
+
+p 689
+
+[service_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/service_stats.sql )
+
+Report on service workload by instance
+
+
+
+
+
+p 693
+
+[gc_miss_rate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/gc_miss_rate.sql )
+
+"Global cache ""miss rate"" by instance "
+
+
+
+
+
+p 694
+
+[top_gc_segments.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/top_gc_segments.sql )
+
+Segments with the highest Global Cache activity
+
+
 
 </tbody>
 
