@@ -1,0 +1,15 @@
+CREATE OR REPLACE VIEW OPSG.OPSG_DELTA_REPORT
+ (
+ START_TIMESTAMP, END_TIMESTAMP, SAMPLE_SECONDS, STAT_NAME, TOTAL_WAITS, 
+TIME_WAITED_MICRO, WAITS_PER_SECOND, MICROSECONDS_PER_SECOND, PCT_OF_TIME
+
+ )
+ AS 
+SELECT  start_timestamp,end_timestamp, ROUND( (end_timestamp - start_timestamp) * 24 * 3600) sample_seconds,
+         stat_name, total_waits, time_waited_micro,
+         ROUND (waits_per_second, 4) waits_per_second,
+         ROUND (microseconds_per_second/1000, 4) ms_per_second,
+         round(microseconds_per_second*100/sum(microseconds_per_second) over(),2) as pct_of_time
+    FROM TABLE (opsg_pkg.wait_time_report ())  
+ORDER BY microseconds_per_second DESC
+/

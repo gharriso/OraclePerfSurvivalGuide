@@ -3,7 +3,7 @@
 
 Here you can obtain the scripts and examples from [Oracle Performance Survival Guide](http://www.amazon.com/gp/product/0137011954?tag=guyharswebbit-20) by [Guy Harrison](http://www.guyharrison.net).  
 
-An archive containing the full set of scripts can be downloaded [here](http://165.225.144.123/OPSGSamples/opsg.zip).  Individual files can be downloaded [below](#Listing_of_individual_utility_scripts).  
+An archive containing the full set of scripts can be downloaded [here](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/Scripts.zip).  Individual files can be downloaded [below](#Listing_of_individual_utility_scripts).  
 
 The archive contains both utility scriptsand all of the SQL files that I used to create various test loads while writing the book.  The utility scripts are described in the index.html file contained within the archive.  These scripts provide reports on various aspects of database health and performance.  
 
@@ -54,7 +54,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 3: Tools of the Trade**</td>
+<td>Chapter 3: Tools of the Trade</td>
 
 <td></td>
 
@@ -114,7 +114,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 5: Indexing and Clustering**</td>
+<td>Chapter 5: Indexing and Clustering</td>
 
 <td></td>
 
@@ -154,7 +154,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 6: Application Design and Implementation**</td>
+<td>Chapter 6: Application Design and Implementation</td>
 
 <td></td>
 
@@ -174,7 +174,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 7: Optimizing the Optimizer**</td>
+<td>Chapter 7: Optimizing the Optimizer</td>
 
 <td></td>
 
@@ -204,7 +204,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 11: Sorting Grouping and Set Operations**</td>
+<td>Chapter 11: Sorting Grouping and Set Operations</td>
 
 <td></td>
 
@@ -224,7 +224,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 12: Using and Tuning PL/SQL**</td>
+<td>Chapter 12: Using and Tuning PL/SQL</td>
 
 <td></td>
 
@@ -274,7 +274,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 13: Parallel SQL**</td>
+<td>Chapter 13: Parallel SQL</td>
 
 <td></td>
 
@@ -314,7 +314,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 15: Lock Contention**</td>
+<td>Chapter 15: Lock Contention</td>
 
 <td></td>
 
@@ -464,7 +464,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 16: Latch and Mutex contention**</td>
+<td>Chapter 16: Latch and Mutex contention</td>
 
 <td></td>
 
@@ -594,7 +594,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 17: Shared Memory Contention**</td>
+<td>Chapter 17: Shared Memory Contention</td>
 
 <td></td>
 
@@ -644,7 +644,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 18: Buffer Cache Tuning**</td>
+<td>Chapter 18: Buffer Cache Tuning</td>
 
 <td></td>
 
@@ -754,7 +754,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 19: Optimizing PGA Memory**</td>
+<td>Chapter 19: Optimizing PGA Memory</td>
 
 <td></td>
 
@@ -834,7 +834,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 20: Other Memory Management Topics**</td>
+<td>Chapter 20: Other Memory Management Topics</td>
 
 <td></td>
 
@@ -1004,7 +1004,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 21: Disk IO Tuning fundamentals**</td>
+<td>Chapter 21: Disk IO Tuning fundamentals</td>
 
 <td></td>
 
@@ -1134,7 +1134,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 22: Advanced IO techniques**</td>
+<td>Chapter 22: Advanced IO techniques</td>
 
 <td></td>
 
@@ -1194,7 +1194,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <tr>
 
-<td>**Chapter 23: Optimizing RAC**</td>
+<td>Chapter 23: Optimizing RAC</td>
 
 <td></td>
 

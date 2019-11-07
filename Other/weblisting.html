@@ -1,0 +1,334 @@
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Oracle Performance Suvival Guide - Scripts</title></head>
+<body><h1>Oracle Performance Survival Guide - Scripts</h1><br>
+Here you can obtain the scripts and examples from <a href="http://www.amazon.com/gp/product/0137011954?tag=guyharswebbit-20">Oracle
+Performance Survival Guide</a> by <a href="http://www.guyharrison.net">Guy Harrison</a>. <br>
+<br>
+An archive containing the full set of scripts can be downloaded <a href="http://165.225.144.123/OPSGSamples/opsg.zip">here</a>. &nbsp;Individual files
+can be downloaded <a href="#Listing_of_individual_utility_scripts">below</a>. <br>
+
+<br>
+The
+archive contains both utility scriptsand all of the SQL files that I
+used to create various test loads while writing the book. &nbsp;The
+utility scripts are described in the index.html file contained within
+the archive. &nbsp;These scripts provide reports on various aspects of database health and performance. <br><br>The rest of the SQL files are provided as is, and
+without descriptions. &nbsp;You might find them useful if you are
+trying to replicate my workloads. <br><br>Some
+of the scripts will only work if you install some packages, views and
+permissions. &nbsp;In particular, the OPSG_PKG package provides an
+ability to generate short term delta and rate reports against the time
+model and wait interface. &nbsp;See <a href="#installation">installation</a>, below, for instructions. <br><br>
+
+I hope you find these scripts - and my book - useful. &nbsp;If you
+have any problems please contact me at&nbsp;<a href="mailto:guy.a.harrison@gmail.com">guy.a.harrison@gmail.com</a>.
+
+&nbsp;<br>
+<br>
+Regards,<br>
+<br><a href="http://www.guyharrison.net">
+Guy Harrison</a> <br><br><br>
+<h2><a name="installation"></a>Installation&nbsp;</h2><br>
+Many
+scripts can be run without any installation providing that the user has
+access to V$ views. &nbsp;However, a few require specialized views
+and
+that&nbsp;the OPSG_PKG be installed. &nbsp;To install the
+package:<br>
+<br>
+1. Open a command prompt within the "install" directory<br>
+
+2. execute either install_opsg.bat (Windows) or&nbsp;install_opsg.sh
+(Linux/Unix)<br>
+3. Respond to the prompts<br><br>Here is an example session:<br><br><div style="margin-left: 40px;"><code>C:\tmp\opsg\install&gt;install_opsg</code><br><code></code><br><code>C:\tmp\opsg\install&gt;sqlplus /nolog @install_opsg</code><br><code></code><br><code>SQL*Plus: Release 11.1.0.7.0 - Production on Thu Sep 10 10:55:02 2009</code><br><code></code><br><code>Copyright (c) 1982, 2008, Oracle.&nbsp; All rights reserved.</code><br><code></code><br><code>Enter password for the (new) OPSG user:opsg</code><br><code>Enter SYS password:</code><br><code>Enter TNSNAMES entry:g11r2ga</code><br></div>
+
+<br>
+The
+script creates a user OPSG which has privileges to run all of the
+scripts and which has appropriate permissions. &nbsp;You can modify
+the
+script if you want to install a different user. &nbsp; You do need the SYS password to install the user. <br>
+<br>
+<h3>Extending the SH schema</h3>
+<br>
+I
+found the data volumes in Oracle's SH schema too low to illustrate some
+of the SQL tuning principles. &nbsp;The script extend_sh_schema.sql
+in
+the scripts directory will add about 2 million rows to the SALES and
+COSTS tables. &nbsp; These updates are applied directly to the SH schema. &nbsp;<br>
+<br><br>
+<br>
+
+<h2><a name="Listing_of_individual_utility_scripts"></a>Listing of individual utility scripts</h2>
+</body></html>
+<table border="0">
+<tbody>
+<tr><td><b>Chapter 3: Tools of the Trade</b></td><td></td><td></td></tr>
+<tr><td>p 41</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch03/topsql1.sql ">topsql1.sql </a></td><td>Top 10 cached sql statements by elapsed time 
+</td></tr>
+<tr><td>p 58</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch03/loginTrigger.sql ">loginTrigger.sql </a></td><td>Example of a login trigger that activates SQL trace
+</td></tr>
+<tr><td>p 70</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch03/topWaits.sql ">topWaits.sql </a></td><td>Non-idle wait times sorted by time waited
+
+</td></tr>
+<tr><td>p 73</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch03/timeModelSimple.sql ">timeModelSimple.sql </a></td><td>Time model unioned with wait data to show waits combined with CPU timings 
+</td></tr>
+<tr><td>p 55</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch03/CurrentSessionTraceStatus.sql ">CurrentSessionTraceStatus.sql </a></td><td>Show the full name and path of the trace file for the current session 
+</td></tr>
+<tr><td><b>Chapter 5: Indexing and Clustering</b></td><td></td><td></td></tr>
+<tr><td>p 122</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch05/monitoringOn.sql ">monitoringOn.sql </a></td><td>Turn on monitoring for all indexes
+</td></tr>
+<tr><td>p 122</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch05/vobject.sql ">vobject.sql </a></td><td>Show usage statistics for indexes 
+
+</td></tr>
+<tr><td>p 133</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch05/checkPlanCache.sql ">checkPlanCache.sql </a></td><td>Report on indexes that are not found in any cached execution plan
+</td></tr>
+<tr><td><b>Chapter 6: Application Design and Implementation </b></td><td></td><td></td></tr>
+<tr><td>p 157</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch06/force_matching.sql ">force_matching.sql </a></td><td>Identify SQLs that are identical other than for literal values (Force matching candidates)
+</td></tr>
+<tr><td><b>Chapter 7: Optimizing the Optimizer</b></td><td></td><td></td></tr>
+<tr><td>p 194</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch07/ses_optimizer.sql ">ses_optimizer.sql </a></td><td>Show optimizer parameters in effect for the curren session 
+</td></tr>
+
+<tr><td>p 198</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch07/disableStats.sql">disableStats.sql</a></td><td>Disable automatic statistics collection
+</td></tr>
+<tr><td><b>Chapter 11: Sorting Grouping and Set Operations</b></td><td></td><td></td></tr>
+<tr><td>p 332</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch11/sql_workarea.sql ">sql_workarea.sql </a></td><td>Show statistics onsort and hash workareas (from V$SQL_WORKAREA)  
+</td></tr>
+<tr><td><b>Chapter 12: Using and Tuning PL/SQL</b></td><td></td><td></td></tr>
+<tr><td>p 355</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch12/plsqltime_sys.sql ">plsqltime_sys.sql </a></td><td>Query to reveal the overhead of PLSQL within the database 
+</td></tr>
+<tr><td>p 356</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch12/cachedPlsql.sql ">cachedPlsql.sql </a></td><td>Show statements in the cache with PLSQL component and show pct of time spent in PLSQL
+
+</td></tr>
+<tr><td>p 357</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch12/queryProfiler.sql ">queryProfiler.sql </a></td><td>Report on data held in the PLSQL_PROFILER tables 
+</td></tr>
+<tr><td>p 360</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch12/hrpof_qry.sql ">hrpof_qry.sql </a></td><td>Query agains the DBMSHP (hierarchical profiler) tables 
+</td></tr>
+<tr><td><b>Chapter 13: Parallel SQL</b></td><td></td><td></td></tr>
+<tr><td>p 414</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch13/px_session.sql ">px_session.sql </a></td><td>Show real time view of current parallel executions 
+</td></tr>
+<tr><td>p 413</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch13/tqstat2.sql ">tqstat2.sql </a></td><td>Example of using v$pq_tqstat to reveal PQO workload distribution 
+
+</td></tr>
+<tr><td>p 422</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch13/rac_pqo2.sql ">rac_pqo2.sql </a></td><td>Example of using v$pq_tqstat to show inster-instance parallel in RAC 
+</td></tr>
+<tr><td><b>Chapter 15: Lock Contention </b></td><td></td><td></td></tr>
+<tr><td>p 460</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/lock_type.sql ">lock_type.sql </a></td><td>Show definition of all lock codes 
+</td></tr>
+<tr><td>p 461</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/v_my_locks.sql">v_my_locks.sql</a></td><td>View definition that will show all locks held by the current user
+</td></tr>
+<tr><td>p 467</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/lock_delta_qry.sql ">lock_delta_qry.sql </a></td><td>Show lock waits compared to other waits and CPU over a short time period 
+
+</td></tr>
+<tr><td>p 466</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/lock_wait_events.sql ">lock_wait_events.sql </a></td><td>Show lock waits compared to other waits and CPU 
+</td></tr>
+<tr><td>p 468</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/ash_locks.sql ">ash_locks.sql </a></td><td>Show lock wait information from Active Session History (ASH) 
+</td></tr>
+<tr><td>p 468</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/awr_locks.sql ">awr_locks.sql </a></td><td>Show lock wait information from Active Workload Repository (AWR) 
+</td></tr>
+<tr><td>p 470</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/locking_sql.sql ">locking_sql.sql </a></td><td>Show SQLs with the highest lock waits 
+</td></tr>
+
+<tr><td>p 471</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/segment_stats.sql ">segment_stats.sql </a></td><td>Show segments with the highest lock waits 
+</td></tr>
+<tr><td>p 472</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/application_module_wait.sql ">application_module_wait.sql </a></td><td>Show SQLs for a particular module with lock waits 
+</td></tr>
+<tr><td>p 472</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/session_lock_waits.sql ">session_lock_waits.sql </a></td><td>Show sessions with a specific USERNAME and their lock waits 
+</td></tr>
+<tr><td>p 476</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/blockers.sql ">blockers.sql </a></td><td>Simple blocking locks script 
+</td></tr>
+<tr><td>p 477</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/lock_tree.sql ">lock_tree.sql </a></td><td>Lock tree built up from V$SESSION
+
+</td></tr>
+<tr><td>p 477</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/show_session_waits.sql ">show_session_waits.sql </a></td><td>Blocking row level locks at the session level 
+</td></tr>
+<tr><td>p 478</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch15/wait_chains.sql ">wait_chains.sql </a></td><td>Lock tree built up from V$wait_chains
+</td></tr>
+<tr><td><b>Chapter 16: Latch and Mutex contention </b></td><td></td><td></td></tr>
+<tr><td>p 494</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/latch_waits.sql ">latch_waits.sql </a></td><td>Latch/mutex waits compared to other non-idle waits and to CPU
+</td></tr>
+<tr><td>p 496</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/latch_qry.sql ">latch_qry.sql </a></td><td>"Latch statistics - gets</td></tr>
+
+<tr><td>p 497</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/ash_latch.sql ">ash_latch.sql </a></td><td>Latch statistics from Active Session History (ASH) 
+</td></tr>
+<tr><td>p 495</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/latch_delta_qry.sql ">latch_delta_qry.sql </a></td><td>Latch/mutex waits over a short duration compared to other waits 
+</td></tr>
+<tr><td>p 497</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/latching_sql.sql ">latching_sql.sql </a></td><td>SQLs with the highest concurrency waits (possible latch/mutex-related) 
+</td></tr>
+<tr><td>p 500</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/force_matching.sql ">force_matching.sql </a></td><td>SQLs not using bind variables - possibly causing library cache mutex contention 
+</td></tr>
+<tr><td>p 499</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/libcache.sql ">libcache.sql </a></td><td>Library cache statistics 
+
+</td></tr>
+<tr><td>p 503</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/cbc_config.sql ">cbc_config.sql </a></td><td>"Number of Cache Buffers Chains latches & number of buffers covered</td></tr>
+<tr><td>p 504</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/cbc_blocks.sql ">cbc_blocks.sql </a></td><td>Blocks with the highest touch counts and latches involved 
+</td></tr>
+<tr><td>p 505</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/rowcache_latches.sql ">rowcache_latches.sql </a></td><td>Rowcache latch statistics 
+</td></tr>
+<tr><td>p 510</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/latch_class.sql ">latch_class.sql </a></td><td>Adjusting spin count for an individual latch class 
+
+</td></tr>
+<tr><td>p 511</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch16/latch_class_qry.sql ">latch_class_qry.sql </a></td><td>Query to show latch class configuration 
+</td></tr>
+<tr><td><b>Chapter 17: Shared Memory Contention </b></td><td></td><td></td></tr>
+<tr><td>p 519</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch17/iostat_file.sql ">iostat_file.sql </a></td><td>Status of ansynchronous IO 
+</td></tr>
+<tr><td>p 521</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch17/flash_size.sql ">flash_size.sql </a></td><td>Size of the flashback log buffer 
+</td></tr>
+<tr><td>p 526</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch17/waitstat.sql ">waitstat.sql </a></td><td>Buffer busy waits by buffer type 
+
+</td></tr>
+<tr><td>p 526</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch17/busy_segments.sql ">busy_segments.sql </a></td><td>Buffer busy waits by segment 
+</td></tr>
+<tr><td><b>Chapter 18: Buffer Cache Tuning</b></td><td></td><td></td></tr>
+<tr><td>p 538</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/temporary_direct.sql ">temporary_direct.sql </a></td><td>Direct path IO and buffered IO
+</td></tr>
+<tr><td>p 540</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/buffer_pool_objects.sql ">buffer_pool_objects.sql </a></td><td>Segments cached in the buffer pools 
+</td></tr>
+<tr><td>p 541</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/hit_rate.sql ">hit_rate.sql </a></td><td>"""hit rates"" for direct and cached IOs "
+
+</td></tr>
+<tr><td>p 542</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/hit_rate_delta.sql ">hit_rate_delta.sql </a></td><td>"""hit rates"" calculated over a  time interval "
+</td></tr>
+<tr><td>p 544</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/sql_miss_rates.sql ">sql_miss_rates.sql </a></td><td>logical and physical IO for specific SQLs
+</td></tr>
+<tr><td>p 546</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/buffer_pool_stats.sql ">buffer_pool_stats.sql </a></td><td>Buffer pool IO statistics 
+</td></tr>
+<tr><td>p 547</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/db_cache_advice1.sql ">db_cache_advice1.sql </a></td><td>Query on V$DB_CACHE_ADVICE
+</td></tr>
+
+<tr><td>p 548</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/db_cache_hist.sql ">db_cache_hist.sql </a></td><td>DB cache advise shown as a histogram 
+</td></tr>
+<tr><td>p 552</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/sga_dynamic_components.sql ">sga_dynamic_components.sql </a></td><td>Query on V$SGA_DYNAMIC_COMPONENTS 
+</td></tr>
+<tr><td>p 551</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch18/sga_resize_ops.sql ">sga_resize_ops.sql </a></td><td>Query on V$SGA_RESIZE_OPS
+</td></tr>
+<tr><td><b>Chapter 19: Optimizing PGA Memory</b></td><td></td><td></td></tr>
+<tr><td>p 562</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch19/pga_parameters.sql ">pga_parameters.sql </a></td><td>PGA parameters and configuration from v$pgastat
+
+</td></tr>
+<tr><td>p 566</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch19/direct_temp_waits.sql ">direct_temp_waits.sql </a></td><td>temporary direct path IO compared to CPU and other non-idle waits 
+</td></tr>
+<tr><td>p 565</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch19/top_pga.sql ">top_pga.sql </a></td><td>Top consumers of PGA memory 
+</td></tr>
+<tr><td>p 567</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch19/direct_io_delta_view_qry.sql ">direct_io_delta_view_qry.sql </a></td><td>Direct path temp IO over a time interval 
+</td></tr>
+<tr><td>p 570</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch19/sql_workarea.sql ">sql_workarea.sql </a></td><td>SQL workarea statistics 
+</td></tr>
+
+<tr><td>p 571</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch19/pga_target_advice.sql ">pga_target_advice.sql </a></td><td>PGA target advice report 
+</td></tr>
+<tr><td>p 572</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch19/pga_advice_hist.sql ">pga_advice_hist.sql </a></td><td>PGA target advice histogram 
+</td></tr>
+<tr><td><b>Chapter 20: Other Memory Management Topics </b></td><td></td><td></td></tr>
+<tr><td>p 578</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/io_waits.sql ">io_waits.sql </a></td><td>IO wait breakdown
+</td></tr>
+<tr><td>p 581</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/io_time_delta_view_qry.sql ">io_time_delta_view_qry.sql </a></td><td>IO wait breakdown over a time period 
+
+</td></tr>
+<tr><td>p 582</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/direct_path_trace_stats.pl">direct_path_trace_stats.pl</a></td><td>Perl script to calculate average direct path IO time from a trace file 
+</td></tr>
+<tr><td>p 583</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/pga_target_time.sql ">pga_target_time.sql </a></td><td>PGA target converted to elapsed times 
+</td></tr>
+<tr><td>p 584</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/overall_memory_advice.sql ">overall_memory_advice.sql </a></td><td>Combined  (PGA+SGA) memory advice report for 10g 
+</td></tr>
+<tr><td>p 586</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/overall_memory11g.sql ">overall_memory11g.sql </a></td><td>Combined (PGA+SGA) memory advice report for 11g 
+</td></tr>
+
+<tr><td>p 590</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/memory_dynamic_components.sql ">memory_dynamic_components.sql </a></td><td>V$MEMORY_DYNAMIC_COMPONENTS report 
+</td></tr>
+<tr><td>p 590</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/memory_resize_ops.sql ">memory_resize_ops.sql </a></td><td>V$MEMORY_RESIZE_OPS report 
+</td></tr>
+<tr><td>p 591</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/memory_target_advice.sql ">memory_target_advice.sql </a></td><td>Memory target advice report 
+</td></tr>
+<tr><td>p 593</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/kmgsbsmemadv.sql ">kmgsbsmemadv.sql </a></td><td>Query against X$KMSGSBSMEMADV (basis of V$MEMORY_TARGET_ADVICE) 
+</td></tr>
+<tr><td>p 594</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/memory_parms.sql ">memory_parms.sql </a></td><td>Report on memory related parameters 
+
+</td></tr>
+<tr><td>p 599</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/result_cache_statistics.sql ">result_cache_statistics.sql </a></td><td>Result set cache statistics 
+</td></tr>
+<tr><td>p 600</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/rscache_hit_rate.sql ">rscache_hit_rate.sql </a></td><td>Result set cache efficiency 
+</td></tr>
+<tr><td>p 600</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/sql_cache_stats.sql ">sql_cache_stats.sql </a></td><td>Result set cache statistics for SQL statements 
+</td></tr>
+<tr><td>p 601</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/rc_dependencies.sql ">rc_dependencies.sql </a></td><td>Result set cache dependencies 
+</td></tr>
+
+<tr><td>p 605</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch20/shared_pool_advice.sql ">shared_pool_advice.sql </a></td><td>Shared pool advisory
+</td></tr>
+<tr><td><b>Chapter 21: Disk IO Tuning fundamentals </b></td><td></td><td></td></tr>
+<tr><td>p 617</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/io_waits.sql ">io_waits.sql </a></td><td>IO waits compared to other waits and CPU 
+</td></tr>
+<tr><td>p 618</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/io_waits_delta.sql ">io_waits_delta.sql </a></td><td>IO waits reported for an interval 
+</td></tr>
+<tr><td>p 619</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/iostat_file.sql ">iostat_file.sql </a></td><td>Summary report from v$iostat_file
+
+</td></tr>
+<tr><td>p 620</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/iostat_function.sql ">iostat_function.sql </a></td><td>Summary report of v$iostat_function 
+</td></tr>
+<tr><td>p 622</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/filestat.sql ">filestat.sql </a></td><td>Summary report from v$filestat
+</td></tr>
+<tr><td>p 622</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/filemetric.sql ">filemetric.sql </a></td><td>Short term IO statistics from v$filemetric 
+</td></tr>
+<tr><td>p 624</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/calibrate_io.sql ">calibrate_io.sql </a></td><td>PL/SQL reoutine to calibrate IO 
+</td></tr>
+
+<tr><td>p 623</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/file_histogram.sql ">file_histogram.sql </a></td><td>IO service time histogram 
+</td></tr>
+<tr><td>p 625</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/dba_rsrc_io_calibrate.sql ">dba_rsrc_io_calibrate.sql </a></td><td>Query IO calibration data 
+</td></tr>
+<tr><td>p 634</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/lgwr_size.sql ">lgwr_size.sql </a></td><td>Size of an average redo log IO 
+</td></tr>
+<tr><td>p 636</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/log_file_waits.sql ">log_file_waits.sql </a></td><td>Report of redo log related waits 
+</td></tr>
+<tr><td>p 637</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch21/log_history.sql ">log_history.sql </a></td><td>Log switch rates from v$log_history 
+
+</td></tr>
+<tr><td><b>Chapter 22: Advanced IO techniques</b></td><td></td><td></td></tr>
+<tr><td>p 645</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch22/diskgroup_performance.sql ">diskgroup_performance.sql </a></td><td>ASM diskgroup IO throughput and service time 
+</td></tr>
+<tr><td>p 646</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch22/asm_disk_performance.sql ">asm_disk_performance.sql </a></td><td>ASM disk-level throughput and service time 
+</td></tr>
+<tr><td>p 647</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch22/asm_operations.sql ">asm_operations.sql </a></td><td>ASM rebalance operations in progress 
+</td></tr>
+<tr><td>p 647</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch22/asm_files.sql ">asm_files.sql </a></td><td>ASM file level IO statistics 
+
+</td></tr>
+<tr><td>p 654</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch22/asm_templates.sql ">asm_templates.sql </a></td><td>List all ASM templates 
+</td></tr>
+<tr><td><b>Chapter 23: Optimizing RAC </b></td><td></td><td></td></tr>
+<tr><td>p 669</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/top_level_waits.sql ">top_level_waits.sql </a></td><td>Break down of top level WAITCLASS waits
+</td></tr>
+<tr><td>p 670</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/cluster_waits.sql ">cluster_waits.sql </a></td><td>Break out of cluster waits compared to other categories 
+</td></tr>
+<tr><td>p 671</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/rac_waits_delta.sql ">rac_waits_delta.sql </a></td><td>RAC waits over an interval of time 
+
+</td></tr>
+<tr><td>p 673</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/avg_latency.sql ">avg_latency.sql </a></td><td>Global cache latency report 
+</td></tr>
+<tr><td>p 674</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/latency_delta.sql ">latency_delta.sql </a></td><td>Global cache latency over a time period
+</td></tr>
+<tr><td>p 675</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/ksxpia.sql ">ksxpia.sql </a></td><td>Private interconnect IP address 
+</td></tr>
+<tr><td>p 677</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/gc_blocks_lost.sql ">gc_blocks_lost.sql </a></td><td>Lost blocks report 
+</td></tr>
+
+<tr><td>p 681</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/lms_latency.sql ">lms_latency.sql </a></td><td>LMS latency breakdown 
+</td></tr>
+<tr><td>p 682</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/flush_time.sql ">flush_time.sql </a></td><td>redo log flush frequency and wait times 
+</td></tr>
+<tr><td>p 684</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/balance.sql ">balance.sql </a></td><td>Cluster balance report 
+</td></tr>
+<tr><td>p 685</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/rac_balance_delta.sql ">rac_balance_delta.sql </a></td><td>Cluster balance over a time period 
+</td></tr>
+<tr><td>p 689</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/service_stats.sql ">service_stats.sql </a></td><td>Report on service workload by instance 
+
+</td></tr>
+<tr><td>p 693</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/gc_miss_rate.sql ">gc_miss_rate.sql </a></td><td>"Global cache ""miss rate"" by instance "
+</td></tr>
+<tr><td>p 694</td><td><a href="http://guyh.textdriven.com/OPSGSamples/Ch23/top_gc_segments.sql ">top_gc_segments.sql </a></td><td>Segments with the highest Global Cache activity 
+</td></tr>
+</tbody>
+</table>
