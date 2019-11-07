@@ -66,7 +66,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 41</td>
 
-<td>[topsql1.sql](http://guyh.textdriven.com/OPSGSamples/Ch03/topsql1.sql )</td>
+<td>[topsql1.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/topsql1.sql )</td>
 
 <td>Top 10 cached sql statements by elapsed time</td>
 
@@ -76,7 +76,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 58</td>
 
-<td>[loginTrigger.sql](http://guyh.textdriven.com/OPSGSamples/Ch03/loginTrigger.sql )</td>
+<td>[loginTrigger.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/loginTrigger.sql )</td>
 
 <td>Example of a login trigger that activates SQL trace</td>
 
@@ -86,7 +86,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 70</td>
 
-<td>[topWaits.sql](http://guyh.textdriven.com/OPSGSamples/Ch03/topWaits.sql )</td>
+<td>[topWaits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/topWaits.sql )</td>
 
 <td>Non-idle wait times sorted by time waited</td>
 
@@ -96,7 +96,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 73</td>
 
-<td>[timeModelSimple.sql](http://guyh.textdriven.com/OPSGSamples/Ch03/timeModelSimple.sql )</td>
+<td>[timeModelSimple.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/timeModelSimple.sql )</td>
 
 <td>Time model unioned with wait data to show waits combined with CPU timings</td>
 
@@ -106,7 +106,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 55</td>
 
-<td>[CurrentSessionTraceStatus.sql](http://guyh.textdriven.com/OPSGSamples/Ch03/CurrentSessionTraceStatus.sql )</td>
+<td>[CurrentSessionTraceStatus.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch03/CurrentSessionTraceStatus.sql )</td>
 
 <td>Show the full name and path of the trace file for the current session</td>
 
@@ -126,7 +126,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 122</td>
 
-<td>[monitoringOn.sql](http://guyh.textdriven.com/OPSGSamples/Ch05/monitoringOn.sql )</td>
+<td>[monitoringOn.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch05/monitoringOn.sql )</td>
 
 <td>Turn on monitoring for all indexes</td>
 
@@ -136,7 +136,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 122</td>
 
-<td>[vobject.sql](http://guyh.textdriven.com/OPSGSamples/Ch05/vobject.sql )</td>
+<td>[vobject.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch05/vobject.sql )</td>
 
 <td>Show usage statistics for indexes</td>
 
@@ -146,7 +146,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 133</td>
 
-<td>[checkPlanCache.sql](http://guyh.textdriven.com/OPSGSamples/Ch05/checkPlanCache.sql )</td>
+<td>[checkPlanCache.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch05/checkPlanCache.sql )</td>
 
 <td>Report on indexes that are not found in any cached execution plan</td>
 
@@ -166,7 +166,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 157</td>
 
-<td>[force_matching.sql](http://guyh.textdriven.com/OPSGSamples/Ch06/force_matching.sql )</td>
+<td>[force_matching.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch06/force_matching.sql )</td>
 
 <td>Identify SQLs that are identical other than for literal values (Force matching candidates)</td>
 
@@ -186,7 +186,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 194</td>
 
-<td>[ses_optimizer.sql](http://guyh.textdriven.com/OPSGSamples/Ch07/ses_optimizer.sql )</td>
+<td>[ses_optimizer.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch07/ses_optimizer.sql )</td>
 
 <td>Show optimizer parameters in effect for the curren session</td>
 
@@ -196,7 +196,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 198</td>
 
-<td>[disableStats.sql](http://guyh.textdriven.com/OPSGSamples/Ch07/disableStats.sql)</td>
+<td>[disableStats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch07/disableStats.sql)</td>
 
 <td>Disable automatic statistics collection</td>
 
@@ -216,7 +216,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 332</td>
 
-<td>[sql_workarea.sql](http://guyh.textdriven.com/OPSGSamples/Ch11/sql_workarea.sql )</td>
+<td>[sql_workarea.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch11/sql_workarea.sql )</td>
 
 <td>Show statistics onsort and hash workareas (from V$SQL_WORKAREA)</td>
 
@@ -236,7 +236,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 355</td>
 
-<td>[plsqltime_sys.sql](http://guyh.textdriven.com/OPSGSamples/Ch12/plsqltime_sys.sql )</td>
+<td>[plsqltime_sys.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/plsqltime_sys.sql )</td>
 
 <td>Query to reveal the overhead of PLSQL within the database</td>
 
@@ -246,7 +246,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 356</td>
 
-<td>[cachedPlsql.sql](http://guyh.textdriven.com/OPSGSamples/Ch12/cachedPlsql.sql )</td>
+<td>[cachedPlsql.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/cachedPlsql.sql )</td>
 
 <td>Show statements in the cache with PLSQL component and show pct of time spent in PLSQL</td>
 
@@ -256,7 +256,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 357</td>
 
-<td>[queryProfiler.sql](http://guyh.textdriven.com/OPSGSamples/Ch12/queryProfiler.sql )</td>
+<td>[queryProfiler.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/queryProfiler.sql )</td>
 
 <td>Report on data held in the PLSQL_PROFILER tables</td>
 
@@ -266,7 +266,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 360</td>
 
-<td>[hrpof_qry.sql](http://guyh.textdriven.com/OPSGSamples/Ch12/hrpof_qry.sql )</td>
+<td>[hrpof_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch12/hrpof_qry.sql )</td>
 
 <td>Query agains the DBMSHP (hierarchical profiler) tables</td>
 
@@ -286,7 +286,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 414</td>
 
-<td>[px_session.sql](http://guyh.textdriven.com/OPSGSamples/Ch13/px_session.sql )</td>
+<td>[px_session.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch13/px_session.sql )</td>
 
 <td>Show real time view of current parallel executions</td>
 
@@ -296,7 +296,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 413</td>
 
-<td>[tqstat2.sql](http://guyh.textdriven.com/OPSGSamples/Ch13/tqstat2.sql )</td>
+<td>[tqstat2.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch13/tqstat2.sql )</td>
 
 <td>Example of using v$pq_tqstat to reveal PQO workload distribution</td>
 
@@ -306,7 +306,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 422</td>
 
-<td>[rac_pqo2.sql](http://guyh.textdriven.com/OPSGSamples/Ch13/rac_pqo2.sql )</td>
+<td>[rac_pqo2.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch13/rac_pqo2.sql )</td>
 
 <td>Example of using v$pq_tqstat to show inster-instance parallel in RAC</td>
 
@@ -326,7 +326,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 460</td>
 
-<td>[lock_type.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/lock_type.sql )</td>
+<td>[lock_type.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_type.sql )</td>
 
 <td>Show definition of all lock codes</td>
 
@@ -336,7 +336,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 461</td>
 
-<td>[v_my_locks.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/v_my_locks.sql)</td>
+<td>[v_my_locks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/v_my_locks.sql)</td>
 
 <td>View definition that will show all locks held by the current user</td>
 
@@ -346,7 +346,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 467</td>
 
-<td>[lock_delta_qry.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/lock_delta_qry.sql )</td>
+<td>[lock_delta_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_delta_qry.sql )</td>
 
 <td>Show lock waits compared to other waits and CPU over a short time period</td>
 
@@ -356,7 +356,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 466</td>
 
-<td>[lock_wait_events.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/lock_wait_events.sql )</td>
+<td>[lock_wait_events.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_wait_events.sql )</td>
 
 <td>Show lock waits compared to other waits and CPU</td>
 
@@ -366,7 +366,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 468</td>
 
-<td>[ash_locks.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/ash_locks.sql )</td>
+<td>[ash_locks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/ash_locks.sql )</td>
 
 <td>Show lock wait information from Active Session History (ASH)</td>
 
@@ -376,7 +376,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 468</td>
 
-<td>[awr_locks.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/awr_locks.sql )</td>
+<td>[awr_locks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/awr_locks.sql )</td>
 
 <td>Show lock wait information from Active Workload Repository (AWR)</td>
 
@@ -386,7 +386,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 470</td>
 
-<td>[locking_sql.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/locking_sql.sql )</td>
+<td>[locking_sql.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/locking_sql.sql )</td>
 
 <td>Show SQLs with the highest lock waits</td>
 
@@ -396,7 +396,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 471</td>
 
-<td>[segment_stats.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/segment_stats.sql )</td>
+<td>[segment_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/segment_stats.sql )</td>
 
 <td>Show segments with the highest lock waits</td>
 
@@ -406,7 +406,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 472</td>
 
-<td>[application_module_wait.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/application_module_wait.sql )</td>
+<td>[application_module_wait.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/application_module_wait.sql )</td>
 
 <td>Show SQLs for a particular module with lock waits</td>
 
@@ -416,7 +416,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 472</td>
 
-<td>[session_lock_waits.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/session_lock_waits.sql )</td>
+<td>[session_lock_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/session_lock_waits.sql )</td>
 
 <td>Show sessions with a specific USERNAME and their lock waits</td>
 
@@ -426,7 +426,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 476</td>
 
-<td>[blockers.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/blockers.sql )</td>
+<td>[blockers.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/blockers.sql )</td>
 
 <td>Simple blocking locks script</td>
 
@@ -436,7 +436,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 477</td>
 
-<td>[lock_tree.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/lock_tree.sql )</td>
+<td>[lock_tree.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/lock_tree.sql )</td>
 
 <td>Lock tree built up from V$SESSION</td>
 
@@ -446,7 +446,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 477</td>
 
-<td>[show_session_waits.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/show_session_waits.sql )</td>
+<td>[show_session_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/show_session_waits.sql )</td>
 
 <td>Blocking row level locks at the session level</td>
 
@@ -456,7 +456,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 478</td>
 
-<td>[wait_chains.sql](http://guyh.textdriven.com/OPSGSamples/Ch15/wait_chains.sql )</td>
+<td>[wait_chains.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch15/wait_chains.sql )</td>
 
 <td>Lock tree built up from V$wait_chains</td>
 
@@ -476,7 +476,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 494</td>
 
-<td>[latch_waits.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/latch_waits.sql )</td>
+<td>[latch_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_waits.sql )</td>
 
 <td>Latch/mutex waits compared to other non-idle waits and to CPU</td>
 
@@ -486,7 +486,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 496</td>
 
-<td>[latch_qry.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/latch_qry.sql )</td>
+<td>[latch_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_qry.sql )</td>
 
 <td>"Latch statistics - gets</td>
 
@@ -496,7 +496,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 497</td>
 
-<td>[ash_latch.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/ash_latch.sql )</td>
+<td>[ash_latch.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/ash_latch.sql )</td>
 
 <td>Latch statistics from Active Session History (ASH)</td>
 
@@ -506,7 +506,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 495</td>
 
-<td>[latch_delta_qry.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/latch_delta_qry.sql )</td>
+<td>[latch_delta_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_delta_qry.sql )</td>
 
 <td>Latch/mutex waits over a short duration compared to other waits</td>
 
@@ -516,7 +516,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 497</td>
 
-<td>[latching_sql.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/latching_sql.sql )</td>
+<td>[latching_sql.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latching_sql.sql )</td>
 
 <td>SQLs with the highest concurrency waits (possible latch/mutex-related)</td>
 
@@ -526,7 +526,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 500</td>
 
-<td>[force_matching.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/force_matching.sql )</td>
+<td>[force_matching.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/force_matching.sql )</td>
 
 <td>SQLs not using bind variables - possibly causing library cache mutex contention</td>
 
@@ -536,7 +536,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 499</td>
 
-<td>[libcache.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/libcache.sql )</td>
+<td>[libcache.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/libcache.sql )</td>
 
 <td>Library cache statistics</td>
 
@@ -546,7 +546,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 503</td>
 
-<td>[cbc_config.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/cbc_config.sql )</td>
+<td>[cbc_config.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/cbc_config.sql )</td>
 
 <td>"Number of Cache Buffers Chains latches & number of buffers covered</td>
 
@@ -556,7 +556,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 504</td>
 
-<td>[cbc_blocks.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/cbc_blocks.sql )</td>
+<td>[cbc_blocks.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/cbc_blocks.sql )</td>
 
 <td>Blocks with the highest touch counts and latches involved</td>
 
@@ -566,7 +566,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 505</td>
 
-<td>[rowcache_latches.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/rowcache_latches.sql )</td>
+<td>[rowcache_latches.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/rowcache_latches.sql )</td>
 
 <td>Rowcache latch statistics</td>
 
@@ -576,7 +576,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 510</td>
 
-<td>[latch_class.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/latch_class.sql )</td>
+<td>[latch_class.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_class.sql )</td>
 
 <td>Adjusting spin count for an individual latch class</td>
 
@@ -586,7 +586,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 511</td>
 
-<td>[latch_class_qry.sql](http://guyh.textdriven.com/OPSGSamples/Ch16/latch_class_qry.sql )</td>
+<td>[latch_class_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch16/latch_class_qry.sql )</td>
 
 <td>Query to show latch class configuration</td>
 
@@ -606,7 +606,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 519</td>
 
-<td>[iostat_file.sql](http://guyh.textdriven.com/OPSGSamples/Ch17/iostat_file.sql )</td>
+<td>[iostat_file.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/iostat_file.sql )</td>
 
 <td>Status of ansynchronous IO</td>
 
@@ -616,7 +616,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 521</td>
 
-<td>[flash_size.sql](http://guyh.textdriven.com/OPSGSamples/Ch17/flash_size.sql )</td>
+<td>[flash_size.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/flash_size.sql )</td>
 
 <td>Size of the flashback log buffer</td>
 
@@ -626,7 +626,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 526</td>
 
-<td>[waitstat.sql](http://guyh.textdriven.com/OPSGSamples/Ch17/waitstat.sql )</td>
+<td>[waitstat.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/waitstat.sql )</td>
 
 <td>Buffer busy waits by buffer type</td>
 
@@ -636,7 +636,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 526</td>
 
-<td>[busy_segments.sql](http://guyh.textdriven.com/OPSGSamples/Ch17/busy_segments.sql )</td>
+<td>[busy_segments.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch17/busy_segments.sql )</td>
 
 <td>Buffer busy waits by segment</td>
 
@@ -656,7 +656,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 538</td>
 
-<td>[temporary_direct.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/temporary_direct.sql )</td>
+<td>[temporary_direct.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/temporary_direct.sql )</td>
 
 <td>Direct path IO and buffered IO</td>
 
@@ -666,7 +666,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 540</td>
 
-<td>[buffer_pool_objects.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/buffer_pool_objects.sql )</td>
+<td>[buffer_pool_objects.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/buffer_pool_objects.sql )</td>
 
 <td>Segments cached in the buffer pools</td>
 
@@ -676,7 +676,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 541</td>
 
-<td>[hit_rate.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/hit_rate.sql )</td>
+<td>[hit_rate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/hit_rate.sql )</td>
 
 <td>"""hit rates"" for direct and cached IOs "</td>
 
@@ -686,7 +686,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 542</td>
 
-<td>[hit_rate_delta.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/hit_rate_delta.sql )</td>
+<td>[hit_rate_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/hit_rate_delta.sql )</td>
 
 <td>"""hit rates"" calculated over a time interval "</td>
 
@@ -696,7 +696,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 544</td>
 
-<td>[sql_miss_rates.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/sql_miss_rates.sql )</td>
+<td>[sql_miss_rates.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/sql_miss_rates.sql )</td>
 
 <td>logical and physical IO for specific SQLs</td>
 
@@ -706,7 +706,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 546</td>
 
-<td>[buffer_pool_stats.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/buffer_pool_stats.sql )</td>
+<td>[buffer_pool_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/buffer_pool_stats.sql )</td>
 
 <td>Buffer pool IO statistics</td>
 
@@ -716,7 +716,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 547</td>
 
-<td>[db_cache_advice1.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/db_cache_advice1.sql )</td>
+<td>[db_cache_advice1.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/db_cache_advice1.sql )</td>
 
 <td>Query on V$DB_CACHE_ADVICE</td>
 
@@ -726,7 +726,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 548</td>
 
-<td>[db_cache_hist.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/db_cache_hist.sql )</td>
+<td>[db_cache_hist.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/db_cache_hist.sql )</td>
 
 <td>DB cache advise shown as a histogram</td>
 
@@ -736,7 +736,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 552</td>
 
-<td>[sga_dynamic_components.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/sga_dynamic_components.sql )</td>
+<td>[sga_dynamic_components.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/sga_dynamic_components.sql )</td>
 
 <td>Query on V$SGA_DYNAMIC_COMPONENTS</td>
 
@@ -746,7 +746,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 551</td>
 
-<td>[sga_resize_ops.sql](http://guyh.textdriven.com/OPSGSamples/Ch18/sga_resize_ops.sql )</td>
+<td>[sga_resize_ops.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch18/sga_resize_ops.sql )</td>
 
 <td>Query on V$SGA_RESIZE_OPS</td>
 
@@ -766,7 +766,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 562</td>
 
-<td>[pga_parameters.sql](http://guyh.textdriven.com/OPSGSamples/Ch19/pga_parameters.sql )</td>
+<td>[pga_parameters.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/pga_parameters.sql )</td>
 
 <td>PGA parameters and configuration from v$pgastat</td>
 
@@ -776,7 +776,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 566</td>
 
-<td>[direct_temp_waits.sql](http://guyh.textdriven.com/OPSGSamples/Ch19/direct_temp_waits.sql )</td>
+<td>[direct_temp_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/direct_temp_waits.sql )</td>
 
 <td>temporary direct path IO compared to CPU and other non-idle waits</td>
 
@@ -786,7 +786,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 565</td>
 
-<td>[top_pga.sql](http://guyh.textdriven.com/OPSGSamples/Ch19/top_pga.sql )</td>
+<td>[top_pga.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/top_pga.sql )</td>
 
 <td>Top consumers of PGA memory</td>
 
@@ -796,7 +796,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 567</td>
 
-<td>[direct_io_delta_view_qry.sql](http://guyh.textdriven.com/OPSGSamples/Ch19/direct_io_delta_view_qry.sql )</td>
+<td>[direct_io_delta_view_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/direct_io_delta_view_qry.sql )</td>
 
 <td>Direct path temp IO over a time interval</td>
 
@@ -806,7 +806,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 570</td>
 
-<td>[sql_workarea.sql](http://guyh.textdriven.com/OPSGSamples/Ch19/sql_workarea.sql )</td>
+<td>[sql_workarea.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/sql_workarea.sql )</td>
 
 <td>SQL workarea statistics</td>
 
@@ -816,7 +816,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 571</td>
 
-<td>[pga_target_advice.sql](http://guyh.textdriven.com/OPSGSamples/Ch19/pga_target_advice.sql )</td>
+<td>[pga_target_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/pga_target_advice.sql )</td>
 
 <td>PGA target advice report</td>
 
@@ -826,7 +826,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 572</td>
 
-<td>[pga_advice_hist.sql](http://guyh.textdriven.com/OPSGSamples/Ch19/pga_advice_hist.sql )</td>
+<td>[pga_advice_hist.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch19/pga_advice_hist.sql )</td>
 
 <td>PGA target advice histogram</td>
 
@@ -846,7 +846,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 578</td>
 
-<td>[io_waits.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/io_waits.sql )</td>
+<td>[io_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/io_waits.sql )</td>
 
 <td>IO wait breakdown</td>
 
@@ -856,7 +856,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 581</td>
 
-<td>[io_time_delta_view_qry.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/io_time_delta_view_qry.sql )</td>
+<td>[io_time_delta_view_qry.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/io_time_delta_view_qry.sql )</td>
 
 <td>IO wait breakdown over a time period</td>
 
@@ -866,7 +866,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 582</td>
 
-<td>[direct_path_trace_stats.pl](http://guyh.textdriven.com/OPSGSamples/Ch20/direct_path_trace_stats.pl)</td>
+<td>[direct_path_trace_stats.pl](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/direct_path_trace_stats.pl)</td>
 
 <td>Perl script to calculate average direct path IO time from a trace file</td>
 
@@ -876,7 +876,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 583</td>
 
-<td>[pga_target_time.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/pga_target_time.sql )</td>
+<td>[pga_target_time.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/pga_target_time.sql )</td>
 
 <td>PGA target converted to elapsed times</td>
 
@@ -886,7 +886,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 584</td>
 
-<td>[overall_memory_advice.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/overall_memory_advice.sql )</td>
+<td>[overall_memory_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/overall_memory_advice.sql )</td>
 
 <td>Combined (PGA+SGA) memory advice report for 10g</td>
 
@@ -896,7 +896,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 586</td>
 
-<td>[overall_memory11g.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/overall_memory11g.sql )</td>
+<td>[overall_memory11g.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/overall_memory11g.sql )</td>
 
 <td>Combined (PGA+SGA) memory advice report for 11g</td>
 
@@ -906,7 +906,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 590</td>
 
-<td>[memory_dynamic_components.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/memory_dynamic_components.sql )</td>
+<td>[memory_dynamic_components.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_dynamic_components.sql )</td>
 
 <td>V$MEMORY_DYNAMIC_COMPONENTS report</td>
 
@@ -916,7 +916,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 590</td>
 
-<td>[memory_resize_ops.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/memory_resize_ops.sql )</td>
+<td>[memory_resize_ops.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_resize_ops.sql )</td>
 
 <td>V$MEMORY_RESIZE_OPS report</td>
 
@@ -926,7 +926,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 591</td>
 
-<td>[memory_target_advice.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/memory_target_advice.sql )</td>
+<td>[memory_target_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_target_advice.sql )</td>
 
 <td>Memory target advice report</td>
 
@@ -936,7 +936,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 593</td>
 
-<td>[kmgsbsmemadv.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/kmgsbsmemadv.sql )</td>
+<td>[kmgsbsmemadv.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/kmgsbsmemadv.sql )</td>
 
 <td>Query against X$KMSGSBSMEMADV (basis of V$MEMORY_TARGET_ADVICE)</td>
 
@@ -946,7 +946,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 594</td>
 
-<td>[memory_parms.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/memory_parms.sql )</td>
+<td>[memory_parms.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/memory_parms.sql )</td>
 
 <td>Report on memory related parameters</td>
 
@@ -956,7 +956,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 599</td>
 
-<td>[result_cache_statistics.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/result_cache_statistics.sql )</td>
+<td>[result_cache_statistics.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/result_cache_statistics.sql )</td>
 
 <td>Result set cache statistics</td>
 
@@ -966,7 +966,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 600</td>
 
-<td>[rscache_hit_rate.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/rscache_hit_rate.sql )</td>
+<td>[rscache_hit_rate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/rscache_hit_rate.sql )</td>
 
 <td>Result set cache efficiency</td>
 
@@ -976,7 +976,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 600</td>
 
-<td>[sql_cache_stats.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/sql_cache_stats.sql )</td>
+<td>[sql_cache_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/sql_cache_stats.sql )</td>
 
 <td>Result set cache statistics for SQL statements</td>
 
@@ -986,7 +986,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 601</td>
 
-<td>[rc_dependencies.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/rc_dependencies.sql )</td>
+<td>[rc_dependencies.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/rc_dependencies.sql )</td>
 
 <td>Result set cache dependencies</td>
 
@@ -996,7 +996,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 605</td>
 
-<td>[shared_pool_advice.sql](http://guyh.textdriven.com/OPSGSamples/Ch20/shared_pool_advice.sql )</td>
+<td>[shared_pool_advice.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch20/shared_pool_advice.sql )</td>
 
 <td>Shared pool advisory</td>
 
@@ -1016,7 +1016,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 617</td>
 
-<td>[io_waits.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/io_waits.sql )</td>
+<td>[io_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/io_waits.sql )</td>
 
 <td>IO waits compared to other waits and CPU</td>
 
@@ -1026,7 +1026,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 618</td>
 
-<td>[io_waits_delta.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/io_waits_delta.sql )</td>
+<td>[io_waits_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/io_waits_delta.sql )</td>
 
 <td>IO waits reported for an interval</td>
 
@@ -1036,7 +1036,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 619</td>
 
-<td>[iostat_file.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/iostat_file.sql )</td>
+<td>[iostat_file.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/iostat_file.sql )</td>
 
 <td>Summary report from v$iostat_file</td>
 
@@ -1046,7 +1046,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 620</td>
 
-<td>[iostat_function.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/iostat_function.sql )</td>
+<td>[iostat_function.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/iostat_function.sql )</td>
 
 <td>Summary report of v$iostat_function</td>
 
@@ -1056,7 +1056,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 622</td>
 
-<td>[filestat.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/filestat.sql )</td>
+<td>[filestat.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/filestat.sql )</td>
 
 <td>Summary report from v$filestat</td>
 
@@ -1066,7 +1066,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 622</td>
 
-<td>[filemetric.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/filemetric.sql )</td>
+<td>[filemetric.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/filemetric.sql )</td>
 
 <td>Short term IO statistics from v$filemetric</td>
 
@@ -1076,7 +1076,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 624</td>
 
-<td>[calibrate_io.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/calibrate_io.sql )</td>
+<td>[calibrate_io.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/calibrate_io.sql )</td>
 
 <td>PL/SQL reoutine to calibrate IO</td>
 
@@ -1086,7 +1086,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 623</td>
 
-<td>[file_histogram.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/file_histogram.sql )</td>
+<td>[file_histogram.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/file_histogram.sql )</td>
 
 <td>IO service time histogram</td>
 
@@ -1096,7 +1096,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 625</td>
 
-<td>[dba_rsrc_io_calibrate.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/dba_rsrc_io_calibrate.sql )</td>
+<td>[dba_rsrc_io_calibrate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/dba_rsrc_io_calibrate.sql )</td>
 
 <td>Query IO calibration data</td>
 
@@ -1106,7 +1106,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 634</td>
 
-<td>[lgwr_size.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/lgwr_size.sql )</td>
+<td>[lgwr_size.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/lgwr_size.sql )</td>
 
 <td>Size of an average redo log IO</td>
 
@@ -1116,7 +1116,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 636</td>
 
-<td>[log_file_waits.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/log_file_waits.sql )</td>
+<td>[log_file_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/log_file_waits.sql )</td>
 
 <td>Report of redo log related waits</td>
 
@@ -1126,7 +1126,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 637</td>
 
-<td>[log_history.sql](http://guyh.textdriven.com/OPSGSamples/Ch21/log_history.sql )</td>
+<td>[log_history.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch21/log_history.sql )</td>
 
 <td>Log switch rates from v$log_history</td>
 
@@ -1146,7 +1146,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 645</td>
 
-<td>[diskgroup_performance.sql](http://guyh.textdriven.com/OPSGSamples/Ch22/diskgroup_performance.sql )</td>
+<td>[diskgroup_performance.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/diskgroup_performance.sql )</td>
 
 <td>ASM diskgroup IO throughput and service time</td>
 
@@ -1156,7 +1156,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 646</td>
 
-<td>[asm_disk_performance.sql](http://guyh.textdriven.com/OPSGSamples/Ch22/asm_disk_performance.sql )</td>
+<td>[asm_disk_performance.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_disk_performance.sql )</td>
 
 <td>ASM disk-level throughput and service time</td>
 
@@ -1166,7 +1166,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 647</td>
 
-<td>[asm_operations.sql](http://guyh.textdriven.com/OPSGSamples/Ch22/asm_operations.sql )</td>
+<td>[asm_operations.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_operations.sql )</td>
 
 <td>ASM rebalance operations in progress</td>
 
@@ -1176,7 +1176,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 647</td>
 
-<td>[asm_files.sql](http://guyh.textdriven.com/OPSGSamples/Ch22/asm_files.sql )</td>
+<td>[asm_files.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_files.sql )</td>
 
 <td>ASM file level IO statistics</td>
 
@@ -1186,7 +1186,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 654</td>
 
-<td>[asm_templates.sql](http://guyh.textdriven.com/OPSGSamples/Ch22/asm_templates.sql )</td>
+<td>[asm_templates.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch22/asm_templates.sql )</td>
 
 <td>List all ASM templates</td>
 
@@ -1206,7 +1206,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 669</td>
 
-<td>[top_level_waits.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/top_level_waits.sql )</td>
+<td>[top_level_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/top_level_waits.sql )</td>
 
 <td>Break down of top level WAITCLASS waits</td>
 
@@ -1216,7 +1216,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 670</td>
 
-<td>[cluster_waits.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/cluster_waits.sql )</td>
+<td>[cluster_waits.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/cluster_waits.sql )</td>
 
 <td>Break out of cluster waits compared to other categories</td>
 
@@ -1226,7 +1226,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 671</td>
 
-<td>[rac_waits_delta.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/rac_waits_delta.sql )</td>
+<td>[rac_waits_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/rac_waits_delta.sql )</td>
 
 <td>RAC waits over an interval of time</td>
 
@@ -1236,7 +1236,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 673</td>
 
-<td>[avg_latency.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/avg_latency.sql )</td>
+<td>[avg_latency.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/avg_latency.sql )</td>
 
 <td>Global cache latency report</td>
 
@@ -1246,7 +1246,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 674</td>
 
-<td>[latency_delta.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/latency_delta.sql )</td>
+<td>[latency_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/latency_delta.sql )</td>
 
 <td>Global cache latency over a time period</td>
 
@@ -1256,7 +1256,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 675</td>
 
-<td>[ksxpia.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/ksxpia.sql )</td>
+<td>[ksxpia.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/ksxpia.sql )</td>
 
 <td>Private interconnect IP address</td>
 
@@ -1266,7 +1266,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 677</td>
 
-<td>[gc_blocks_lost.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/gc_blocks_lost.sql )</td>
+<td>[gc_blocks_lost.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/gc_blocks_lost.sql )</td>
 
 <td>Lost blocks report</td>
 
@@ -1276,7 +1276,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 681</td>
 
-<td>[lms_latency.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/lms_latency.sql )</td>
+<td>[lms_latency.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/lms_latency.sql )</td>
 
 <td>LMS latency breakdown</td>
 
@@ -1286,7 +1286,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 682</td>
 
-<td>[flush_time.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/flush_time.sql )</td>
+<td>[flush_time.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/flush_time.sql )</td>
 
 <td>redo log flush frequency and wait times</td>
 
@@ -1296,7 +1296,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 684</td>
 
-<td>[balance.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/balance.sql )</td>
+<td>[balance.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/balance.sql )</td>
 
 <td>Cluster balance report</td>
 
@@ -1306,7 +1306,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 685</td>
 
-<td>[rac_balance_delta.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/rac_balance_delta.sql )</td>
+<td>[rac_balance_delta.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/rac_balance_delta.sql )</td>
 
 <td>Cluster balance over a time period</td>
 
@@ -1316,7 +1316,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 689</td>
 
-<td>[service_stats.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/service_stats.sql )</td>
+<td>[service_stats.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/service_stats.sql )</td>
 
 <td>Report on service workload by instance</td>
 
@@ -1326,7 +1326,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 693</td>
 
-<td>[gc_miss_rate.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/gc_miss_rate.sql )</td>
+<td>[gc_miss_rate.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/gc_miss_rate.sql )</td>
 
 <td>"Global cache ""miss rate"" by instance "</td>
 
@@ -1336,7 +1336,7 @@ I found the data volumes in Oracle's SH schema too low to illustrate some of the
 
 <td>p 694</td>
 
-<td>[top_gc_segments.sql](http://guyh.textdriven.com/OPSGSamples/Ch23/top_gc_segments.sql )</td>
+<td>[top_gc_segments.sql](https://raw.githubusercontent.com/gharriso/OraclePerfSurvivalGuide/master/Ch23/top_gc_segments.sql )</td>
 
 <td>Segments with the highest Global Cache activity</td>
 
