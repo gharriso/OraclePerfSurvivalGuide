@@ -1,0 +1,12 @@
+CREATE OR REPLACE PACKAGE opsg_pkg IS
+    FUNCTION wait_time_report(p_mode VARCHAR2 DEFAULT 'NORMAL')
+        RETURN opsg_time_model_typ;
+
+    FUNCTION sysstat_report(p_mode VARCHAR2 DEFAULT 'NORMAL')
+        RETURN opsg_sysstat_typ;
+
+    FUNCTION rac_wait_time_report(p_mode VARCHAR2 DEFAULT 'NORMAL')
+        RETURN opsg_time_model_typ;
+    FUNCTION service_stat_report(p_mode VARCHAR2 DEFAULT 'NORMAL')
+        RETURN opsg_servstat_typ;
+END;

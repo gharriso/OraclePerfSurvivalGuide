@@ -1,0 +1,11 @@
+col value format 999,999,999,999
+col name format a30
+set echo on
+
+SELECT name, SUM(VALUE) value
+FROM gv$sysstat
+WHERE    name LIKE 'gc%lost'
+      OR name LIKE 'gc%received'
+      OR name LIKE 'gc%served'
+GROUP BY name
+ORDER BY name;

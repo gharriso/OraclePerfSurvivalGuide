@@ -1,0 +1,16 @@
+col component format a20 
+col oper_type format a10
+col initial_mb format 99,999
+col target_mb format 99,999
+col end_time format a5 heading "End|Time"
+set pagesize 1000
+set lines 70
+set echo on 
+
+SELECT component, oper_type, 
+       initial_size / 1048576 initial_mb,
+       target_size / 1048576 target_mb,
+       to_char(end_time,'HH24:MI') end_time 
+FROM v$memory_resize_ops
+WHERE end_time > SYSDATE - NUMTODSINTERVAL(1, 'HOUR')
+ORDER BY start_time DESC; 

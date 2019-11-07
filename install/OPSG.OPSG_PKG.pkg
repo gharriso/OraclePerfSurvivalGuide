@@ -1,0 +1,379 @@
+CREATE OR REPLACE PACKAGE opsg_pkg IS
+    FUNCTION wait_time_report(p_mode VARCHAR2 DEFAULT 'NORMAL')
+        RETURN opsg_time_model_typ;
+    FUNCTION rac_wait_time_report(p_mode VARCHAR2 DEFAULT 'NORMAL')
+        RETURN opsg_time_model_typ;
+END; -- Package spec
+
+
+CREATE OR REPLACE PACKAGE BODY opsg_pkg IS
+    no_such_table exception;
+    PRAGMA EXCEPTION_INIT(no_such_table, -942);
+
+    TYPE numlist IS TABLE OF NUMBER
+                        INDEX BY BINARY_INTEGER;
+
+    TYPE varlist IS TABLE OF VARCHAR2(1000)
+                        INDEX BY BINARY_INTEGER;
+
+    TYPE event_stat_typ IS TABLE OF NUMBER
+                               INDEX BY VARCHAR(1000);
+
+    TYPE csr_typ IS REF CURSOR;
+
+    g_current_waits          event_stat_typ;
+    g_current_microseconds   event_stat_typ;
+    g_prev_waits             event_stat_typ;
+    g_prev_microseconds      event_stat_typ;
+    g_prev_timestamp         DATE;
+    g_current_timestamp      DATE;
+    g_current_hsecs          NUMBER;
+    g_prev_hsecs             NUMBER;
+    g_time_model_data        opsg_time_model_typ := opsg_time_model_typ();
+    g_rac_mode               BOOLEAN := FALSE;
+
+    --
+    -- Return the text of the main time model query
+    -- We return this as a string, so that we can dynamically
+    -- execute and check for permissions problems at run time
+    --
+    FUNCTION time_model_qry
+        RETURN VARCHAR2 IS
+        v_return_string   VARCHAR2(2000);
+    BEGIN
+        IF g_rac_mode THEN
+            v_return_string :=
+                'WITH time_model AS
+     (
+        SELECT /*+ materialize */
+               SUM
+                  (CASE
+                      WHEN stat_name IN (''DB time'', ''background cpu time'')
+                         THEN VALUE
+                   END
+                  ) AS cpu_time,
+               SUM
+                  (CASE
+                      WHEN stat_name IN
+                                       (''background elapsed time'', ''DB time'')
+                         THEN VALUE
+                   END
+                  ) AS active_time
+          FROM sys.gv_$sys_time_model
+         WHERE stat_name IN
+                  (''DB time'',
+                   ''DB CPU'',
+                   ''background elapsed time'',
+                   ''background cpu time''
+                  )),
+     wait_interface AS
+     (
+        SELECT   /*+ materialize */
+                 event,
+                  sum(time_waited_micro)  microseconds,
+                    sum(total_waits)  total_waits
+            FROM   sys.gv_$system_event e                 
+           WHERE e.wait_class <> ''Idle''
+           group by event 
+        )
+   SELECT   event, microseconds, total_waits,
+         ROUND (microseconds / total_waits) avg_wait,
+         ROUND (microseconds * 100 / SUM (microseconds) OVER (), 2) pct
+    FROM (SELECT event, microseconds, total_waits
+            FROM wait_interface
+          UNION
+          SELECT ''CPU'', cpu_time, NULL
+            FROM time_model
+          UNION
+          SELECT ''Other'',
+                 GREATEST (active_time - cpu_time - wait_time, 0) other_time,
+                 NULL
+            FROM time_model
+                 CROSS JOIN
+                 (SELECT SUM (microseconds) wait_time
+                    FROM wait_interface) w
+                 )
+     ORDER BY 2 DESC';
+        ELSE
+            v_return_string :=
+                '
+   WITH time_model AS
+     (
+        SELECT /*+ materialize */
+               SUM
+                  (CASE
+                      WHEN stat_name IN (''DB time'', ''background cpu time'')
+                         THEN VALUE
+                   END
+                  ) AS cpu_time,
+               SUM
+                  (CASE
+                      WHEN stat_name IN
+                                       (''background elapsed time'', ''DB time'')
+                         THEN VALUE
+                   END
+                  ) AS active_time
+          FROM sys.v_$sys_time_model
+         WHERE stat_name IN
+                  (''DB time'',
+                   ''DB CPU'',
+                   ''background elapsed time'',
+                   ''background cpu time''
+                  )),
+     wait_interface AS
+     (
+        SELECT   /*+ materialize */
+                 event,
+                  time_waited_micro  microseconds,
+                    total_waits  total_waits
+            FROM   sys.v_$system_event e                 
+           WHERE e.wait_class <> ''Idle''
+        )
+   SELECT   event, microseconds, total_waits,
+         ROUND (microseconds / total_waits) avg_wait,
+         ROUND (microseconds * 100 / SUM (microseconds) OVER (), 2) pct
+    FROM (SELECT event, microseconds, total_waits
+            FROM wait_interface
+          UNION
+          SELECT ''CPU'', cpu_time, NULL
+            FROM time_model
+          UNION
+          SELECT ''Other'',
+                 GREATEST (active_time - cpu_time - wait_time, 0) other_time,
+                 NULL
+            FROM time_model
+                 CROSS JOIN
+                 (SELECT SUM (microseconds) wait_time
+                    FROM wait_interface) w
+                 )
+     ORDER BY 2 DESC';
+        END IF;
+        RETURN (v_return_string);
+    END;
+
+    FUNCTION db_start_time
+        RETURN DATE IS
+        v_start_time   DATE;
+    BEGIN
+        SELECT startup_time INTO v_start_time FROM v$instance;
+
+        RETURN (v_start_time);
+    END;
+
+    PROCEDURE save_to_previous IS
+    BEGIN
+        g_prev_waits := g_current_waits;
+        g_prev_microseconds := g_current_microseconds;
+        g_prev_hsecs := g_current_hsecs;
+        g_prev_timestamp := g_current_timestamp;
+    END;
+
+    PROCEDURE load_current_waits IS
+        csr_var          csr_typ;
+        v_event          varlist;
+        v_microseconds   numlist;
+        v_total_waits    numlist;
+        v_avg_wait       numlist;
+        v_pct            numlist;
+    BEGIN
+        OPEN csr_var FOR time_model_qry();
+
+        FETCH csr_var
+        BULK COLLECT INTO v_event, v_microseconds, v_total_waits,
+                          v_avg_wait, v_pct;
+
+        CLOSE csr_var;
+
+        SELECT hsecs INTO g_current_hsecs FROM sys.v_$timer;
+
+        g_current_timestamp := SYSDATE;
+
+        FOR i IN 1 .. v_event.COUNT LOOP
+            g_current_waits(v_event(i)) := v_total_waits(i);
+            g_current_microseconds(v_event(i)) := v_microseconds(i);
+        END LOOP;
+    END;
+
+    PROCEDURE report_current IS
+        v_stat_name       VARCHAR2(1000);
+        v_start_time      DATE;
+        v_interval_secs   NUMBER;
+        v_stat_line       opsg_time_model_line_typ;
+        i                 NUMBER := 1;
+    BEGIN
+        g_time_model_data.delete();
+        v_start_time := db_start_time;
+        v_interval_secs := (g_current_timestamp - v_start_time) * 24 * 3600;
+        v_stat_name := g_current_waits.FIRST;
+
+        WHILE v_stat_name IS NOT NULL LOOP
+            g_time_model_data.EXTEND;
+            v_stat_line :=
+                opsg_time_model_line_typ(v_start_time, g_current_timestamp,
+                v_stat_name, g_current_waits(v_stat_name),
+                g_current_microseconds(v_stat_name),
+                g_current_waits(v_stat_name) / v_interval_secs,
+                g_current_microseconds(v_stat_name) / v_interval_secs);
+            g_time_model_data(g_time_model_data.LAST) := v_stat_line;
+            v_stat_name := g_current_waits.NEXT(v_stat_name);
+        END LOOP;
+    END;
+
+    PROCEDURE report_delta IS
+        v_stat_name       VARCHAR2(1000);
+        v_start_time      DATE;
+        v_interval_secs   NUMBER;
+        v_stat_line       opsg_time_model_line_typ;
+        i                 NUMBER := 1;
+    BEGIN
+        g_time_model_data.delete();
+        v_start_time := g_prev_timestamp;
+        v_interval_secs := (g_current_timestamp - v_start_time) * 24 * 3600;
+        v_stat_name := g_current_waits.FIRST;
+
+        WHILE v_stat_name IS NOT NULL LOOP
+            g_time_model_data.EXTEND;
+            v_stat_line :=
+                opsg_time_model_line_typ(v_start_time, g_current_timestamp,
+                v_stat_name, g_current_waits(v_stat_name),
+                g_current_microseconds(v_stat_name),
+                (g_current_waits(v_stat_name) - g_prev_waits(v_stat_name)) / v_interval_secs,
+                (g_current_microseconds(v_stat_name)
+                 - g_prev_microseconds(v_stat_name))
+                / v_interval_secs);
+            g_time_model_data(g_time_model_data.LAST) := v_stat_line;
+            v_stat_name := g_current_waits.NEXT(v_stat_name);
+        END LOOP;
+    END;
+
+    PROCEDURE reset_data IS
+    BEGIN
+        g_current_waits.delete;
+        g_current_microseconds.delete;
+        g_prev_waits.delete;
+        g_prev_microseconds.delete;
+        g_prev_timestamp := NULL;
+        g_current_timestamp := NULL;
+    END;
+
+    --
+    -- Function to return time model and event data statistics
+    -- Usage:
+    --  select * from table(opsg_pkg.opsg_time_model());
+    --
+    -- First call in a session will return statistics since the
+    -- database start.  Subsequent calls will return delta statistics
+    -- since last called.
+    --
+    --
+    FUNCTION wait_time_report(p_mode VARCHAR2 DEFAULT 'NORMAL')
+        RETURN opsg_time_model_typ IS
+        v_return_data   opsg_time_model_typ;
+        v_diag_string   VARCHAR2(200) := ' ';
+    BEGIN
+        g_time_model_data := opsg_time_model_typ();
+
+        IF p_mode = 'RESET' THEN
+            reset_data;
+            v_diag_string := v_diag_string || 'RESET';
+        END IF;
+
+        load_current_waits;
+
+        IF g_prev_waits.COUNT = 0 THEN
+            report_current;
+            v_diag_string := v_diag_string || ' CURRENT';
+        ELSE
+            report_delta;
+            v_diag_string := v_diag_string || ' DELTA';
+        END IF;
+
+        save_to_previous;
+        IF g_time_model_data.COUNT = 0 THEN
+            raise_application_error(-20002, 'No data: ' || v_diag_string);
+        END IF;
+        RETURN (g_time_model_data);
+    END;
+
+    FUNCTION opsg_time_model_o(p_wait_time IN INTEGER DEFAULT 15 /*Time (in seconds) to calculate rates over */
+                                                                )
+        RETURN opsg_time_model_typ IS
+        TYPE csr_typ IS REF CURSOR;
+
+        v_time_model_qry       VARCHAR2(2000);
+        v_start_waits          event_stat_typ;
+        v_start_microseconds   event_stat_typ;
+        v_single_line          opsg_time_model_line_typ;
+        v_return_tab opsg_time_model_typ
+                := opsg_time_model_typ();
+        csr_var                csr_typ;
+        v_event                varlist;
+        v_microseconds         numlist;
+        v_total_waits          numlist;
+        v_avg_wait             numlist;
+        v_pct                  numlist;
+        v_starttime            NUMBER;
+        v_endtime              NUMBER;
+        v_elapsed_seconds      NUMBER;
+    BEGIN
+        v_time_model_qry := time_model_qry();
+
+        OPEN csr_var FOR v_time_model_qry;
+
+        FETCH csr_var
+        BULK COLLECT INTO v_event, v_microseconds, v_total_waits,
+                          v_avg_wait, v_pct;
+
+        CLOSE csr_var;
+
+        FOR i IN 1 .. v_event.COUNT LOOP
+            v_start_waits(v_event(i)) := v_total_waits(i);
+            v_start_microseconds(v_event(i)) := v_microseconds(i);
+        END LOOP;
+
+        SELECT hsecs INTO v_starttime FROM sys.v_$timer;
+
+        sys.DBMS_LOCK.sleep(p_wait_time);
+
+        OPEN csr_var FOR v_time_model_qry;
+
+        FETCH csr_var
+        BULK COLLECT INTO v_event, v_microseconds, v_total_waits,
+                          v_avg_wait, v_pct;
+
+        CLOSE csr_var;
+
+        SELECT hsecs INTO v_endtime FROM sys.v_$timer;
+
+        v_elapsed_seconds := (v_endtime - v_starttime) / 100;
+
+        FOR i IN 1 .. v_event.COUNT LOOP
+            v_single_line :=
+                opsg_time_model_line_typ(NULL, NULL, v_event(i),
+                v_total_waits(i), v_microseconds(i),
+                (v_total_waits(i) - v_start_waits(v_event(i))) / v_elapsed_seconds,
+                (v_microseconds(i) - v_start_microseconds(v_event(i)))
+                / v_elapsed_seconds);
+            v_return_tab.EXTEND;
+            v_return_tab(v_return_tab.LAST) := v_single_line;
+        END LOOP;
+
+        RETURN (v_return_tab);
+    EXCEPTION
+        WHEN no_such_table THEN
+            raise_application_error(-20001,
+            'This script needs SELECT ANY DICTIONARY privilege');
+    END;
+
+    FUNCTION rac_wait_time_report(p_mode VARCHAR2 DEFAULT 'NORMAL')
+        RETURN opsg_time_model_typ IS
+    BEGIN
+        g_rac_mode := TRUE;
+        RETURN (wait_time_report(p_mode));
+    END;
+
+    PROCEDURE testit IS
+    BEGIN
+        NULL;
+    END;
+END;

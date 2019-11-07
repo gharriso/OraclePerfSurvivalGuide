@@ -1,0 +1,11 @@
+col sample_seconds format 999,999 heading "Sample|Seconds"
+col wait_type format a35 heading "Wait Category"
+col total_waits format 99,999,999 heading "Total Waits"
+col time_waited_seconds format 99,999,999.99 heading "Time Waited|Seconds"
+col pct format 999.99 heading "Time|Pct"
+set echo on
+
+SELECT sample_seconds, wait_type, total_waits, time_waited_seconds, pct
+FROM io_time_delta_view
+ORDER BY pct DESC;
+ 

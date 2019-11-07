@@ -1,0 +1,10 @@
+column wait_type format a35
+column pct_time format 99.00
+set pagesize 1000
+set echo on
+
+
+SELECT wait_type, time_waited_ms, pct_time, sample_seconds
+  FROM latch_delta_view
+ WHERE pct_time > .01; 
+ 

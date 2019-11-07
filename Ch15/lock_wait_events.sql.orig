@@ -1,0 +1,5 @@
+set echo on 
+
+SELECT name
+FROM v$event_name
+WHERE name LIKE 'enq: TX%';

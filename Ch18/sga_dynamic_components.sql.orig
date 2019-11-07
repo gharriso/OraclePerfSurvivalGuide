@@ -1,0 +1,8 @@
+set pages 1000
+set lines 100
+set echo on 
+ 
+SELECT component, ROUND(current_size / 1048576) current_mb,
+       ROUND(min_size / 1048576) minimum_mb,
+       ROUND(user_specified_size / 1048576) specified_mb
+FROM v$sga_dynamic_components sdc;

@@ -1,0 +1,6 @@
+col name format a30
+col value format 999,999,999,999
+set pages 1000
+set lines 100
+set echo on 
+SELECT name,value FROM v$result_cache_statistics;

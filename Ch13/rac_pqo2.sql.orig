@@ -1,0 +1,9 @@
+spool rac_pqo2
+set echo on
+set pagesize 1000
+set lines 120
+set timing on
+DROP TABLE sales;
+CREATE TABLE sales AS
+   SELECT   * FROM sh.sales;
+SELECT   *

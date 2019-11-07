@@ -1,0 +1,9 @@
+set echo on
+column latch_name format a30
+ 
+SELECT kslltnam latch_name, class_ksllt latch_class, 
+       c.spin class_spin_count
+  FROM x$kslltr r JOIN x$ksllclass c
+    ON (c.indx = r.class_ksllt)
+ WHERE r.class_ksllt > 0; 
+

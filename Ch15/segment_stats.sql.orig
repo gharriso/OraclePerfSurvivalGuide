@@ -1,0 +1,11 @@
+column object_name format a30
+column row_lock_wait format 9,999,999
+column pct format 99.99
+set echo on 
+
+SELECT object_name, VALUE row_lock_waits, 
+       ROUND(VALUE * 100 / SUM(VALUE) OVER (), 2) pct
+  FROM v$segment_statistics
+ WHERE statistic_name = 'row lock waits' AND VALUE > 0
+ ORDER BY VALUE DESC; 
+ 

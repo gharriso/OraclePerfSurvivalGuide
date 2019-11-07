@@ -1,0 +1,10 @@
+set echo on
+ALTER SYSTEM SET "_SPIN_COUNT"=5000 SCOPE=BOTH;
+
+SELECT latch#
+FROM v$latch
+WHERE name = 'cache buffers chains';
+
+ALTER SYSTEM SET "_latch_classes" = "141:1" SCOPE=SPFILE;
+ALTER SYSTEM SET "_latch_class_1"=10000 SCOPE=SPFILE;
+ 

@@ -1,0 +1,8 @@
+set echo on 
+
+SELECT asynch_io, COUNT( * )
+FROM v$iostat_file
+WHERE filetype_name in ( 'Data File','Temp File')
+GROUP BY asynch_io
+/
+

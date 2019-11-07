@@ -1,0 +1,50 @@
+/* borrowed this script from Jona
+DROP TABLE t2;
+DROP TABLE t1;
+CREATE TABLE t1 AS
+   SELECT   ROWNUM id, object_name, object_type, owner
+     FROM   all_objects
+    WHERE   ROWNUM < 10000;
+
+CREATE TABLE t2 AS
+   SELECT   ROWNUM id, object_name, object_type, owner
+     FROM   all_objects
+    WHERE   ROWNUM < 10000;
+
+set autotrace on 
+    
+SELECT /*+ddxxd
+               parallel(t1,7)
+       */
+      ROWNUM, t1.object_name, t1.object_type, t1.owner
+  FROM   t1,
+         (SELECT /*+
+                         parallel(t1,5)
+                 */
+                ROWNUM, t1.object_name, t1.object_type, t1.owner
+            FROM   t1,
+                   (SELECT /*+
+                                   ordered
+                                   parallel(t1,3)
+                                   parallel(t2,3)
+                                   use_hash(t2)
+                           */
+                          ROWNUM, t1.object_name, t2.object_type,
+                             t2.owner
+                      FROM   t1, t2
+                     WHERE       t2.object_name = t1.object_name
+                             AND t2.object_type = t1.object_type
+                             AND t2.owner = t1.owner) v1
+           WHERE       v1.object_name = t1.object_name
+                   AND v1.object_type = t1.object_type
+                   AND v1.owner = t1.owner) v2
+ WHERE       v2.object_name = t1.object_name
+         AND v2.object_type = t1.object_type
+         AND v2.owner = t1.owner;
+         
+set autotrace off
+ 
+SELECT   dfo_number,tq_id,server_type,count(*),max(num_rows), min(num_rows), count(distinct process)  FROM v$pq_tqstat 
+group by dfo_number,tq_id,server_type 
+order by dfo_number,tq_id,server_type desc ; 
+/* Formatted on 30/12/2008 2:06:52 PM (QP5 v5.120.811.25008) */

@@ -1,0 +1,6 @@
+set echo on 
+
+SELECT pool,name,round(bytes/1048576,2) mb
+FROM v$sgastat
+WHERE name LIKE 'flashback generation buff'; 
+

@@ -1,0 +1,9 @@
+column wait_type format a35
+set pagesize 1000
+set echo on
+
+
+SELECT wait_type, time_waited_ms, pct_time, sample_seconds
+  FROM lock_delta_view
+ WHERE pct_time > 1; 
+ 
